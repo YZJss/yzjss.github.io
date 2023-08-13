@@ -1,0 +1,683 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>排序算法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="YZJ">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="WebServer.html" />
+    
+    
+    <link rel="prev" href="剑指offer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="C++.html">
+            
+                <a href="C++.html">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="计算机网络.html">
+            
+                <a href="计算机网络.html">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="操作系统.html">
+            
+                <a href="操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="数据库.html">
+            
+                <a href="数据库.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Linux常用命令.html">
+            
+                <a href="Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="SQL.html">
+            
+                <a href="SQL.html">
+            
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="剑指offer.html">
+            
+                <a href="剑指offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.8" data-path="排序算法.html">
+            
+                <a href="排序算法.html">
+            
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WebServer.html">
+            
+                <a href="WebServer.html">
+            
+                    
+                    WebServer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="GPT.html">
+            
+                <a href="GPT.html">
+            
+                    
+                    搭建自己的GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >排序算法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6392;&#x5E8F;&#x7B97;&#x6CD5;"><b></b>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><b></b>1 &#x5192;&#x6CE1;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#2-&#x9009;&#x62E9;&#x6392;&#x5E8F;"><b></b>2 &#x9009;&#x62E9;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#3-&#x63D2;&#x5165;&#x6392;&#x5E8F;"><b></b>3 &#x63D2;&#x5165;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#4-&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><b></b>4 &#x5FEB;&#x901F;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#5-&#x5806;&#x6392;&#x5E8F;"><b></b>5 &#x5806;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#6-&#x5F52;&#x5E76;&#x6392;&#x5E8F;"><b></b>6 &#x5F52;&#x5E76;&#x6392;&#x5E8F;</a></li></ul></ul></div><a href="#&#x6392;&#x5E8F;&#x7B97;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;"><a name="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x5E8F;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</h1>
+<h2 id="1-&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><a name="1-&#x5192;&#x6CE1;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#1-&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>1 &#x5192;&#x6CE1;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubblesort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.size(); ++i) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; nums.size() - <span class="hljs-number">1</span> - i; ++j) {
+            <span class="hljs-keyword">if</span> (nums[j] &gt; nums[j + <span class="hljs-number">1</span>]) {
+                swap(nums[j], nums[j + <span class="hljs-number">1</span>]);
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="2-&#x9009;&#x62E9;&#x6392;&#x5E8F;"><a name="2-&#x9009;&#x62E9;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#2-&#x9009;&#x62E9;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>2 &#x9009;&#x62E9;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">selectsort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.size() - <span class="hljs-number">1</span>; ++i) {
+        <span class="hljs-keyword">int</span> min_index = i;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; nums.size(); ++j) {
+            <span class="hljs-keyword">if</span> (nums[j] &lt; nums[min_index]) {
+                min_index = j;
+            }
+        }
+        <span class="hljs-keyword">if</span> (min_index != i) {
+            swap(nums[min_index], nums[i]);
+        }
+    }
+}
+</code></pre>
+<h2 id="3-&#x63D2;&#x5165;&#x6392;&#x5E8F;"><a name="3-&#x63D2;&#x5165;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#3-&#x63D2;&#x5165;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>3 &#x63D2;&#x5165;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertsort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;num)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; num.size(); i++) {
+        <span class="hljs-keyword">int</span> insert_num = num[i], j;
+        <span class="hljs-keyword">for</span> (j = i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--) {
+            <span class="hljs-keyword">if</span> (num[j] &gt; insert_num)
+                num[j + <span class="hljs-number">1</span>] = num[j];
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">break</span>;
+        }
+        num[j + <span class="hljs-number">1</span>] = insert_num;
+    }
+}
+</code></pre>
+<h2 id="4-&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><a name="4-&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#4-&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>4 &#x5FEB;&#x901F;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">partition</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;arr, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+    <span class="hljs-keyword">int</span> pivot = arr[high];  
+    <span class="hljs-keyword">int</span> i = (low - <span class="hljs-number">1</span>);      
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = low; j &lt; high; j++) {
+        <span class="hljs-keyword">if</span> (arr[j] &lt;= pivot) {
+            i++;
+            swap(arr[j], arr[i]);
+        }
+    }
+    swap(arr[i + <span class="hljs-number">1</span>], arr[high]);
+    <span class="hljs-keyword">return</span> (i + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quicksort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;arr, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+    <span class="hljs-keyword">if</span> (low &lt; high) {
+        <span class="hljs-keyword">int</span> p = partition(arr, low, high);
+        quicksort(arr, low, p - <span class="hljs-number">1</span>);
+        quicksort(arr, p + <span class="hljs-number">1</span>, high);
+    }
+}
+</code></pre>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quicksort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;v,<span class="hljs-keyword">int</span> start,<span class="hljs-keyword">int</span> end)</span> </span>{<span class="hljs-comment">//&#x5FEB;&#x901F;&#x6392;&#x5E8F;</span>
+    <span class="hljs-keyword">if</span> (start &lt; end) {
+        <span class="hljs-keyword">int</span> base=v[start];<span class="hljs-comment">//&#x5B9A;&#x4E0B;&#x57FA;&#x503C;</span>
+        <span class="hljs-keyword">int</span> low = start;<span class="hljs-comment">//&#x8FD9;&#x91CC;&#x53EB;&#x4F4E;&#x6307;&#x9488;&#x597D;&#x4E86;&#xFF08;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x6765;&#x5145;&#x5F53;&#x6307;&#x9488;&#x7684;&#x4F5C;&#x7528;&#xFF09;</span>
+        <span class="hljs-keyword">int</span> heigh =end+<span class="hljs-number">1</span>;<span class="hljs-comment">//&#x90A3;&#x8FD9;&#x91CC;&#x53EB;&#x9AD8;&#x6307;&#x9488;&#x5427;</span>
+        <span class="hljs-keyword">while</span> (low&lt;high) {
+            <span class="hljs-keyword">while</span> (low &lt; end &amp;&amp; v[++low] &lt;= base);<span class="hljs-comment">//&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x627E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;base&#x5927;&#x7684;&#x503C;&#x4E3A;&#x6B62;</span>
+            <span class="hljs-keyword">while</span> (heigh &gt; start &amp;&amp; v[--heigh] &gt;= base);<span class="hljs-comment">//&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x627E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;base&#x5C0F;&#x7684;&#x503C;&#x4E3A;&#x6B62;</span>
+            <span class="hljs-keyword">if</span> (low &lt; heigh) {
+                swap(v[low], v[heigh]);<span class="hljs-comment">//&#x4EA4;&#x6362;</span>
+            }
+        }
+        swap(v[start], v[heigh]);<span class="hljs-comment">//&#x786E;&#x5B9A;&#x4E86;base&#x6700;&#x540E;&#x6240;&#x5728;&#x7684;&#x4F4D;&#x7F6E;</span>
+        quicksort(v,start,heigh<span class="hljs-number">-1</span>);<span class="hljs-comment">//&#x5206;&#x800C;&#x6CBB;&#x4E4B;&#x7684;&#x601D;&#x60F3;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x8C03;&#x7528;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x786E;&#x5B9A;&#x6BCF;&#x4E2A;base&#x6392;&#x5E8F;&#x540E;&#x6700;&#x540E;&#x7684;&#x6240;&#x5728;&#x4F4D;&#x7F6E;</span>
+        quicksort(v,heigh+<span class="hljs-number">1</span>,end);
+    }
+}
+</code></pre>
+<h2 id="5-&#x5806;&#x6392;&#x5E8F;"><a name="5-&#x5806;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#5-&#x5806;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>5 &#x5806;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heapify</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> i)</span> </span>{
+    <span class="hljs-keyword">if</span> (i &gt;= n) {
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">int</span> c1 = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>; <span class="hljs-comment">//&#x5B50;&#x8282;&#x70B9; c1 c2</span>
+    <span class="hljs-keyword">int</span> c2 = <span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">int</span> max = i;    <span class="hljs-comment">// &#x7236;&#x8282;&#x70B9;  max</span>
+    <span class="hljs-keyword">if</span> (c1 &lt; n &amp;&amp; nums[c1] &gt; nums[max]) {
+        max = c1;
+    }
+    <span class="hljs-keyword">if</span> (c2 &lt; n &amp;&amp; nums[c2] &gt; nums[max]) {
+        max = c2;
+    }
+    <span class="hljs-keyword">if</span> (max != i) {
+        swap(nums[max], nums[i]);
+        heapify(nums, n, max);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build_heap</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums, <span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-keyword">int</span> last_node = n - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> parent = (last_node - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = parent; i &gt;= <span class="hljs-number">0</span>; --i) {
+        heapify(nums, n, i);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heap_sort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums, <span class="hljs-keyword">int</span> n)</span> </span>{
+    build_heap(nums, n);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        swap(nums[i], nums[<span class="hljs-number">0</span>]);
+        heapify(nums, i, <span class="hljs-number">0</span>);
+    }
+}
+</code></pre>
+<h2 id="6-&#x5F52;&#x5E76;&#x6392;&#x5E8F;"><a name="6-&#x5F52;&#x5E76;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#6-&#x5F52;&#x5E76;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>6 &#x5F52;&#x5E76;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-c++"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; merge(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; left, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; right) {
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (i &lt; left.size() &amp;&amp; j &lt; right.size()) {
+        <span class="hljs-keyword">if</span> (left[i] &lt;= right[j])
+            res.push_back(left[i++]);
+        <span class="hljs-keyword">else</span>
+            res.push_back(right[j++]);
+    }
+    <span class="hljs-keyword">if</span> (i == left.size())
+        res.insert(res.end(), right.begin() + j, right.end());
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == right.size())
+        res.insert(res.end(), left.begin() + i, left.end());
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; mergeSort(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; arr) {
+    <span class="hljs-keyword">if</span> (arr.size() &lt; <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> arr;
+    <span class="hljs-keyword">int</span> mid = arr.size() / <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; left(arr.begin(), arr.begin() + mid);
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; right(arr.begin() + mid, arr.end());
+    <span class="hljs-keyword">return</span> merge(mergeSort(left), mergeSort(right));
+}
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/0.jpeg" alt="img" style="zoom:67%;"></p>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;vector&quot;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.size(); ++i) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, nums[i]);
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; num = {<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>};
+    print(num);
+    <span class="hljs-comment">//quicksort(num, 0, 9);</span>
+    <span class="hljs-comment">//selectsort(num);</span>
+    <span class="hljs-comment">//bubblesort(num);</span>
+    <span class="hljs-comment">//insertsort(num);</span>
+    <span class="hljs-comment">//heap_sort(num, 10);</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; b = mergeSort(num);
+    print(b);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th><strong>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</strong></th>
+<th><strong>&#x5E73;&#x5747;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong></th>
+<th><strong>&#x6700;&#x574F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong></th>
+<th><strong>&#x6700;&#x597D;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong></th>
+<th><strong>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong></th>
+<th><strong>&#x7A33;&#x5B9A;&#x6027;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</strong></td>
+<td>O(n&#xB2;)</td>
+<td>O(n&#xB2;)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x9009;&#x62E9;&#x6392;&#x5E8F;</strong></td>
+<td>O(n&#xB2;)</td>
+<td>O(n&#xB2;)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x63D2;&#x5165;&#x6392;&#x5E8F;</strong></td>
+<td>O(n&#xB2;)</td>
+<td>O(n&#xB2;)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</strong></td>
+<td>O(nlogn)</td>
+<td>O(n&#xB2;)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x5806;&#x6392;&#x5E8F;</strong></td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(1)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</strong></td>
+<td>O(nlogn)</td>
+<td>O(ns)</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>&#x4E0D;&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x5F52;&#x5E76;&#x6392;&#x5E8F;</strong></td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(n)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x8BA1;&#x6570;&#x6392;&#x5E8F;</strong></td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+<tr>
+<td><strong>&#x57FA;&#x6570;&#x6392;&#x5E8F;</strong></td>
+<td>O(N*M)</td>
+<td>O(N*M)</td>
+<td>O(N*M)</td>
+<td>O(M)</td>
+<td>&#x7A33;&#x5B9A;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4E0E;&#x5176;&#x4E2D;&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x6B21;&#x6570;&#x6210;&#x6B63;&#x6BD4;&#x4F8B;&#xFF0C;&#x7B97;&#x6CD5;&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x7684;&#x6267;&#x884C;&#x6B21;&#x6570;&#xFF0C;&#x4E3A;&#x7B97;&#x6CD5;&#x7684;<strong>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong>&#x3002;</p>
+<p><strong>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong>&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x5728;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E34;&#x65F6;&#x5360;&#x7528;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#x7684;&#x91CF;&#x5EA6; &#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; YZJ 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2023-08-13 16:14:03
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="剑指offer.html" class="navigation navigation-prev " aria-label="Previous page: 剑指offer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="WebServer.html" class="navigation navigation-next " aria-label="Next page: WebServer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"排序算法","level":"2.8","depth":1,"next":{"title":"WebServer","level":"2.9","depth":1,"path":"WebServer.md","ref":"WebServer.md","articles":[]},"previous":{"title":"剑指offer","level":"2.7","depth":1,"path":"剑指offer.md","ref":"剑指offer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","highlight","search-pro","splitter","code","expandable-chapters-small","tbfed-pagefooter","popup","github","sharing-plus","hide-element","expandable-chapters","chapter-fold","custom-favicon","auto-scroll-table","ancre-navigation","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © YZJ 2022","modify_label":"更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yzjss"},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"morty.ico","custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","qq"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"YZJ","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"排序算法.md","mtime":"2023-08-13T08:14:03.715Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-13T12:13:05.521Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
