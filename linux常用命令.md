@@ -236,3 +236,36 @@ tar -xvf xxx.tar 解压tar包
 10. *.xz 用 xz -d 解压
 11. *.tar.xz 用 tar -zJf 解压
 
+
+
+## 你用过的 Linux 常用命令有哪些？
+
+- 首先是一些文件和目录操作的命令，比如：
+  - cd 、pwd、 ls、
+  - 创建 touch 、mkdir，删除 rm、移动或重命名 rm，复制cp
+  - cat、more、tail 查看文件内容
+  - 还有一些重要的命令，如chmod 权限管理、grep 搜索内容、find 搜索文件
+- 还有一些和网络相关的命令
+  - ipconfig 查看网络接口属性，配置ip地址
+  - netstat 查看各种网络相关信息
+  - route 查看路由
+  - ping
+- 进程管理的常用命令有：
+  - ps -ef 查看所有进程信息
+  - kill 杀死进程
+- 系统方面常用的有：
+  - top 可以动态显示cpu、内存、进程等情况
+  - iostat 可以查看io读写/cpu使用情况
+  - sar 查询cpu、磁盘使用情况
+  - env 可以查看环境变量
+  - date 显示日期
+- 还有一些服务的常用命令
+  - systemctl 管理服务
+  - firewall-cmd 防火墙
+  - vsftpd 文件传输
+- 一些软件安装管理的
+  - rpm、yum、dpkg、apt-get用于安装管理软件
+  - 解压缩有：
+    - tar -xvf xxx.tar 解压tar包
+    - zip、unzip
+    - gzip与gunzip
