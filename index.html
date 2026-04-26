@@ -1,25 +1,478 @@
-<!DOCTYPE html>
-<html lang="zh-CN" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>YZJ 的学习笔记</title>
-    <meta name="description" content="机器学习、深度学习与工程实践笔记">
-    <meta name="generator" content="VitePress v1.6.4">
-    <link rel="preload stylesheet" href="/assets/style.BhX5jokk.css" as="style">
-    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>首页 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="YZJ">
+        
+        
     
-    <script type="module" src="/assets/app.rXVcfln5.js"></script>
-    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="modulepreload" href="/assets/chunks/theme.DYWb5MW0.js">
-    <link rel="modulepreload" href="/assets/chunks/framework.CAXxHpAX.js">
-    <link rel="modulepreload" href="/assets/index.md.lvKBQkcU.lean.js">
-    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
-    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
-  </head>
-  <body>
-    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><header class="VPNav" data-v-5d98c3a5 data-v-ae24b3ad><div class="VPNavBar" data-v-ae24b3ad data-v-6aa21345><div class="wrapper" data-v-6aa21345><div class="container" data-v-6aa21345><div class="title" data-v-6aa21345><div class="VPNavBarTitle" data-v-6aa21345 data-v-1168a8e4><a class="title" href="/" data-v-1168a8e4><!--[--><!--]--><!--[--><img class="VPImage logo" src="/morty.ico" alt data-v-8426fc1a><!--]--><span data-v-1168a8e4>YZJ Notes</span><!--[--><!--]--></a></div></div><div class="content" data-v-6aa21345><div class="content-body" data-v-6aa21345><!--[--><!--]--><div class="VPNavBarSearch search" data-v-6aa21345><!--[--><!----><div id="local-search"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><span class="vp-icon DocSearch-Search-Icon"></span><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div><!--]--></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-6aa21345 data-v-dc692963><span id="main-nav-aria-label" class="visually-hidden" data-v-dc692963> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink active" href="/" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>首页</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/machine-learning/" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>机器学习</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/legacy/" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>旧版 GitBook</span><!--]--></a><!--]--><!--[--><a class="VPLink link vp-external-link-icon VPNavBarMenuLink" href="https://github.com/YZJss/yzjss.github.io" target="_blank" rel="noreferrer" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>GitHub</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-6aa21345 data-v-6c893767><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-6c893767 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-6aa21345 data-v-0394ad82 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/YZJss" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-github"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-6aa21345 data-v-bb2aa2f0 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-cf11d7a2><span class="vpi-more-horizontal icon" data-v-cf11d7a2></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><!----><!--[--><!--[--><!----><div class="group" data-v-bb2aa2f0><div class="item appearance" data-v-bb2aa2f0><p class="label" data-v-bb2aa2f0>外观</p><div class="appearance-action" data-v-bb2aa2f0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-bb2aa2f0 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div></div></div><div class="group" data-v-bb2aa2f0><div class="item social-links" data-v-bb2aa2f0><div class="VPSocialLinks social-links-list" data-v-bb2aa2f0 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/YZJss" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-github"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-6aa21345 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><div class="divider" data-v-6aa21345><div class="divider-line" data-v-6aa21345></div></div></div><!----></header><!----><!----><div class="VPContent is-home" id="VPContent" data-v-5d98c3a5 data-v-1428d186><div class="VPHome" data-v-1428d186 data-v-8b561e3d><!--[--><!--]--><div class="VPHero VPHomeHero" data-v-8b561e3d data-v-4f9c455b><div class="container" data-v-4f9c455b><div class="main" data-v-4f9c455b><!--[--><!--]--><!--[--><h1 class="heading" data-v-4f9c455b><span class="name clip" data-v-4f9c455b>YZJ 的学习笔记</span><span class="text" data-v-4f9c455b>机器学习、深度学习与工程实践</span></h1><p class="tagline" data-v-4f9c455b>用分章节 Markdown 记录知识体系、常考点和代码实践。</p><!--]--><!--[--><!--]--><div class="actions" data-v-4f9c455b><!--[--><div class="action" data-v-4f9c455b><a class="VPButton medium brand" href="/machine-learning/" data-v-4f9c455b data-v-fa7799d5>开始学习</a></div><div class="action" data-v-4f9c455b><a class="VPButton medium alt" href="/legacy/" data-v-4f9c455b data-v-fa7799d5>查看旧版入口</a></div><!--]--></div><!--[--><!--]--></div><!----></div></div><!--[--><!--]--><!--[--><!--]--><div class="VPFeatures VPHomeFeatures" data-v-8b561e3d data-v-a6181336><div class="container" data-v-a6181336><div class="items" data-v-a6181336><!--[--><div class="grid-3 item" data-v-a6181336><div class="VPLink no-icon VPFeature" data-v-a6181336 data-v-a3976bdc><!--[--><article class="box" data-v-a3976bdc><!----><h2 class="title" data-v-a3976bdc>分章节整理</h2><p class="details" data-v-a3976bdc>每个主题独立成 Markdown 文档，适合持续维护和复习。</p><!----></article><!--]--></div></div><div class="grid-3 item" data-v-a6181336><div class="VPLink no-icon VPFeature" data-v-a6181336 data-v-a3976bdc><!--[--><article class="box" data-v-a3976bdc><!----><h2 class="title" data-v-a3976bdc>考试导向</h2><p class="details" data-v-a3976bdc>根据题库整理高频概念、易错点和答题模板。</p><!----></article><!--]--></div></div><div class="grid-3 item" data-v-a6181336><div class="VPLink no-icon VPFeature" data-v-a6181336 data-v-a3976bdc><!--[--><article class="box" data-v-a3976bdc><!----><h2 class="title" data-v-a3976bdc>代码实践</h2><p class="details" data-v-a3976bdc>结合 PyTorch 示例，把理论和实现放在一起理解。</p><!----></article><!--]--></div></div><!--]--></div></div></div><!--[--><!--]--><div class="vp-doc container" style="" data-v-8b561e3d data-v-8e2d4988><!--[--><div style="position:relative;" data-v-8b561e3d><div></div></div><!--]--></div></div></div><footer class="VPFooter" data-v-5d98c3a5 data-v-e315a0ad><div class="container" data-v-e315a0ad><p class="message" data-v-e315a0ad>Powered by VitePress</p><p class="copyright" data-v-e315a0ad>Copyright © YZJ</p></div></footer><!--[--><!--]--></div></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"index.md\":\"lvKBQkcU\",\"legacy_index.md\":\"C8GNp-Dj\",\"machine-learning_basics.md\":\"CI5v4FcY\",\"machine-learning_bayesian.md\":\"Ciuym-5z\",\"machine-learning_cnn.md\":\"22ODyP19\",\"machine-learning_exam-review.md\":\"CAFVlk_y\",\"machine-learning_generative-models.md\":\"BFt6C30t\",\"machine-learning_gnn.md\":\"Bzr81pmm\",\"machine-learning_index.md\":\"D5_VBP-u\",\"machine-learning_llm-agent.md\":\"ubwtm0eJ\",\"machine-learning_neural-network.md\":\"CZggopAc\",\"machine-learning_optimization-regularization.md\":\"Dh1U66YD\",\"machine-learning_pytorch.md\":\"YZxnQKEe\",\"machine-learning_rnn-lstm.md\":\"w51ICQ_u\",\"machine-learning_supervised-learning.md\":\"CosHXkuq\",\"machine-learning_transformer.md\":\"L2RoypSG\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"zh-CN\",\"dir\":\"ltr\",\"title\":\"YZJ 的学习笔记\",\"description\":\"机器学习、深度学习与工程实践笔记\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"logo\":\"/morty.ico\",\"siteTitle\":\"YZJ Notes\",\"nav\":[{\"text\":\"首页\",\"link\":\"/\"},{\"text\":\"机器学习\",\"link\":\"/machine-learning/\"},{\"text\":\"旧版 GitBook\",\"link\":\"/legacy/\"},{\"text\":\"GitHub\",\"link\":\"https://github.com/YZJss/yzjss.github.io\"}],\"sidebar\":{\"/machine-learning/\":[{\"text\":\"机器学习笔记\",\"items\":[{\"text\":\"学习路线\",\"link\":\"/machine-learning/\"},{\"text\":\"机器学习基础\",\"link\":\"/machine-learning/basics\"},{\"text\":\"监督学习\",\"link\":\"/machine-learning/supervised-learning\"},{\"text\":\"神经网络基础\",\"link\":\"/machine-learning/neural-network\"},{\"text\":\"优化与正则化\",\"link\":\"/machine-learning/optimization-regularization\"},{\"text\":\"CNN 卷积神经网络\",\"link\":\"/machine-learning/cnn\"},{\"text\":\"RNN 与 LSTM\",\"link\":\"/machine-learning/rnn-lstm\"},{\"text\":\"Transformer\",\"link\":\"/machine-learning/transformer\"},{\"text\":\"贝叶斯方法\",\"link\":\"/machine-learning/bayesian\"},{\"text\":\"生成模型\",\"link\":\"/machine-learning/generative-models\"},{\"text\":\"GNN 图神经网络\",\"link\":\"/machine-learning/gnn\"},{\"text\":\"大模型与 Agent\",\"link\":\"/machine-learning/llm-agent\"},{\"text\":\"PyTorch 实战\",\"link\":\"/machine-learning/pytorch\"},{\"text\":\"考试题整理\",\"link\":\"/machine-learning/exam-review\"}]}],\"/legacy/\":[{\"text\":\"旧版页面入口\",\"items\":[{\"text\":\"旧版首页说明\",\"link\":\"/legacy/\"}]}]},\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/YZJss\"}],\"search\":{\"provider\":\"local\"},\"footer\":{\"message\":\"Powered by VitePress\",\"copyright\":\"Copyright © YZJ\"},\"lastUpdated\":{\"text\":\"最后更新\"},\"outline\":{\"label\":\"本页目录\"},\"docFooter\":{\"prev\":\"上一页\",\"next\":\"下一页\"},\"darkModeSwitchLabel\":\"外观\",\"sidebarMenuLabel\":\"菜单\",\"returnToTopLabel\":\"返回顶部\"},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}");</script>
+    <link rel="stylesheet" href="gitbook/style.css">
+
     
-  </body>
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="C++.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="C++.html">
+            
+                <a href="C++.html">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="STL.html">
+            
+                <a href="STL.html">
+            
+                    
+                    STL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="计算机网络.html">
+            
+                <a href="计算机网络.html">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="操作系统.html">
+            
+                <a href="操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="数据库.html">
+            
+                <a href="数据库.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="Linux常用命令.html">
+            
+                <a href="Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="SQL.html">
+            
+                <a href="SQL.html">
+            
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="剑指offer.html">
+            
+                <a href="剑指offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="排序算法.html">
+            
+                <a href="排序算法.html">
+            
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="WebServer.html">
+            
+                <a href="WebServer.html">
+            
+                    
+                    WebServer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="RPC.html">
+            
+                <a href="RPC.html">
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="GPT.html">
+            
+                <a href="GPT.html">
+            
+                    
+                    搭建自己的GPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="服务器防止暴力破解.html">
+            
+                <a href="服务器防止暴力破解.html">
+            
+                    
+                    服务器防止暴力破解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="Vultr配置Shadowsocks.html">
+            
+                <a href="Vultr配置Shadowsocks.html">
+            
+                    
+                    Vultr配置Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >首页</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#yzjs-blog"><b></b>YZJ&apos;s Blog</a></li></ul></div><a href="#yzjs-blog" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="yzjs-blog"><a name="yzjs-blog" class="anchor-navigation-ex-anchor" href="#yzjs-blog"><i class="fa fa-link" aria-hidden="true"></i></a>YZJ&apos;s Blog</h1>
+<p>&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;</p>
+<ul>
+<li>Author: yangzejin</li>
+<li>Email: i@yangzejin.com</li>
+</ul>
+<p>GPT3/GPT4&#xFF1A;<a href="https://gpt.yangzejin.com/" target="_blank">gpt.yangzejin.com</a></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; YZJ 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;
+2023-08-24 08:46:02
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="C++.html" class="navigation navigation-next navigation-unique" aria-label="Next page: C++">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"首页","level":"1.1","depth":1,"next":{"title":"C++","level":"2.1","depth":1,"path":"C++.md","ref":"C++.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","highlight","search-pro","splitter","code","expandable-chapters-small","tbfed-pagefooter","popup","github","sharing-plus","hide-element","expandable-chapters","chapter-fold","custom-favicon","auto-scroll-table","ancre-navigation"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © YZJ 2022","modify_label":"更新时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yzjss"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"morty.ico","custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","qq"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"YZJ","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"README.md","mtime":"2023-08-24T00:46:02.127Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-14T05:34:56.165Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
 </html>
+
