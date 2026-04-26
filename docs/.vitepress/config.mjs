@@ -2,46 +2,38 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'YZJ 的学习笔记',
-  description: '机器学习、深度学习与工程实践笔记',
+  title: '笔记',
+  description: '笔记',
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
     logo: '/morty.ico',
-    siteTitle: 'YZJ Notes',
+    siteTitle: '笔记',
     nav: [
       { text: '首页', link: '/' },
-      { text: '机器学习', link: '/machine-learning/' },
-      { text: '旧版 GitBook', link: '/legacy/' },
+      { text: '笔记', link: '/blog/' },
       { text: 'GitHub', link: 'https://github.com/YZJss/yzjss.github.io' }
     ],
     sidebar: {
-      '/machine-learning/': [
+      '/blog/': [
         {
-          text: '机器学习笔记',
+          text: '目录',
           items: [
-            { text: '学习路线', link: '/machine-learning/' },
-            { text: '机器学习基础', link: '/machine-learning/basics' },
-            { text: '监督学习', link: '/machine-learning/supervised-learning' },
-            { text: '神经网络基础', link: '/machine-learning/neural-network' },
-            { text: '优化与正则化', link: '/machine-learning/optimization-regularization' },
-            { text: 'CNN 卷积神经网络', link: '/machine-learning/cnn' },
-            { text: 'RNN 与 LSTM', link: '/machine-learning/rnn-lstm' },
-            { text: 'Transformer', link: '/machine-learning/transformer' },
-            { text: '贝叶斯方法', link: '/machine-learning/bayesian' },
-            { text: '生成模型', link: '/machine-learning/generative-models' },
-            { text: 'GNN 图神经网络', link: '/machine-learning/gnn' },
-            { text: '大模型与 Agent', link: '/machine-learning/llm-agent' },
-            { text: 'PyTorch 实战', link: '/machine-learning/pytorch' },
-            { text: '考试题整理', link: '/machine-learning/exam-review' }
-          ]
-        }
-      ],
-      '/legacy/': [
-        {
-          text: '旧版页面入口',
-          items: [
-            { text: '旧版首页说明', link: '/legacy/' }
+            { text: '文章列表', link: '/blog/' },
+            { text: 'C++', link: '/blog/cpp' },
+            { text: 'STL', link: '/blog/stl' },
+            { text: '计算机网络', link: '/blog/network' },
+            { text: '操作系统', link: '/blog/os' },
+            { text: '数据库', link: '/blog/database' },
+            { text: 'Linux 常用命令', link: '/blog/linux-commands' },
+            { text: 'SQL', link: '/blog/sql' },
+            { text: '剑指 Offer', link: '/blog/offer' },
+            { text: '排序算法', link: '/blog/sorting' },
+            { text: 'WebServer', link: '/blog/webserver' },
+            { text: 'RPC', link: '/blog/rpc' },
+            { text: 'GPT', link: '/blog/gpt' },
+            { text: '服务器防止暴力破解', link: '/blog/server-security' },
+            { text: 'Vultr 配置 Shadowsocks', link: '/blog/shadowsocks' }
           ]
         }
       ]

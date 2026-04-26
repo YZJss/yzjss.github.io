@@ -3,3 +3,4 @@ docs/.vitepress/cache
 docs/.vitepress/dist
 npm-debug.log*
 .DS_Store
+vitepress-dev.*.log
