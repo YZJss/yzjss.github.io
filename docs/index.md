@@ -3,21 +3,21 @@ layout: home
 
 hero:
   name: YZJ 的学习笔记
-  text: 机器学习、深度学习与工程实践
-  tagline: 用分章节 Markdown 记录知识体系、常考点和代码实践。
+  text: 个人博客迁移预备站
+  tagline: 旧内容先完整保留，后续再逐步迁移和补充机器学习笔记。
   actions:
     - theme: brand
-      text: 开始学习
+      text: 机器学习笔记规划
       link: /machine-learning/
     - theme: alt
-      text: 查看旧版入口
+      text: 旧版 GitBook 说明
       link: /legacy/
 
 features:
-  - title: 分章节整理
-    details: 每个主题独立成 Markdown 文档，适合持续维护和复习。
-  - title: 考试导向
-    details: 根据题库整理高频概念、易错点和答题模板。
-  - title: 代码实践
-    details: 结合 PyTorch 示例，把理论和实现放在一起理解。
+  - title: 旧内容优先
+    details: 当前线上旧 GitBook 页面先保持不变，避免迁移时丢内容。
+  - title: VitePress 预备
+    details: 新框架环境已经搭好，可以先本地预览，再决定何时切换。
+  - title: 机器学习待补
+    details: 机器学习章节只保留目录骨架，正文等你学习时逐章补充。
 ---
