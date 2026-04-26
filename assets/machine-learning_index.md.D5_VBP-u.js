@@ -1,0 +1,13 @@
+import{_ as a,o as s,c as n,ag as l}from"./chunks/framework.CAXxHpAX.js";const c=JSON.parse('{"title":"机器学习笔记","description":"","frontmatter":{},"headers":[],"relativePath":"machine-learning/index.md","filePath":"machine-learning/index.md","lastUpdated":1777200285000}'),e={name:"machine-learning/index.md"};function t(h,i,o,d,p,r){return s(),n("div",null,[...i[0]||(i[0]=[l(`<h1 id="机器学习笔记" tabindex="-1">机器学习笔记 <a class="header-anchor" href="#机器学习笔记" aria-label="Permalink to &quot;机器学习笔记&quot;">​</a></h1><p>这套笔记按章节整理，目标是同时服务三件事：</p><ul><li>建立机器学习和深度学习的知识体系。</li><li>根据题库反推常考点和易错点。</li><li>用 PyTorch 示例把关键概念落到代码里。</li></ul><h2 id="建议学习顺序" tabindex="-1">建议学习顺序 <a class="header-anchor" href="#建议学习顺序" aria-label="Permalink to &quot;建议学习顺序&quot;">​</a></h2><ol><li>机器学习基础</li><li>监督学习</li><li>神经网络基础</li><li>优化与正则化</li><li>CNN、RNN、Transformer</li><li>贝叶斯方法、生成模型、GNN</li><li>大模型与 Agent</li><li>PyTorch 实战和考试题整理</li></ol><h2 id="单章笔记模板" tabindex="-1">单章笔记模板 <a class="header-anchor" href="#单章笔记模板" aria-label="Permalink to &quot;单章笔记模板&quot;">​</a></h2><p>每章建议按照下面的结构写：</p><div class="language-markdown vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">markdown</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 一句话理解</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 核心概念</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 公式或结构</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 直觉解释</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 常考点</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 易错点</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## PyTorch 示例</span></span></code></pre></div>`,8)])])}const g=a(e,[["render",t]]);export{c as __pageData,g as default};
