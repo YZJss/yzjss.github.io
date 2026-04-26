@@ -4,7 +4,7 @@
 
 `lastb`命令会显示最近错误登录的日志，包括通过ssh服务错误登录的日志。
 
-![ssh](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//ssh.png)
+![Ssh Login](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/server-security/ssh-login.png)
 
 没办法，只能修改登陆端口了。
 

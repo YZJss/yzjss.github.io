@@ -2,7 +2,7 @@
 
 首先在[Vultr](https://www.vultr.com/?ref=8060713)上购买vps，推荐NewYork 3.5美金/月,你也可以在这个网站测试本地到Vultr各个区域的延迟 [https://ping.gaomeluo.com/vultr/](https://ping.gaomeluo.com/vultr/) 。
 
-![01](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//01.png)
+![Shadowsocks Step 01](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/shadowsocks/shadowsocks-step-01.png)
 
 接下来用putty连接服务器，搭建Shdowsocks。
 
@@ -67,11 +67,11 @@ ssserver -c /etc/shadowsocks.json -d restart #重启
 
 最后用Shadowsocks客户端连接即可
 
-![02](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//02.png)
+![Shadowsocks Step 02](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/shadowsocks/shadowsocks-step-02.png)
 
 看油管1080p速度还是很快的。
 
-![03](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//03.png)
+![Shadowsocks Step 03](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/shadowsocks/shadowsocks-step-03.png)
 
 多用户和aes-256-gcm加密配置
 

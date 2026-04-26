@@ -70,7 +70,7 @@ MyISAM
 
 ### 一条SQL语句在数据库框架中的执行流程
 
-![](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230221145527162.png)
+![Sql Execution Flow](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/database/sql-execution-flow.png)
 
 1.  应用程序把查询SQL语句发送给服务器执行；
 2.  查询缓存，如果缓存是打开的，服务器在收到查询请求后，并不会直接去数据库查询，而是在数据库的查询缓存中找是否有相同的查询数据，如果存在，直接返回给客户端。只有缓存不存在时，才会进行下面的操作
@@ -206,7 +206,7 @@ SELECT * FROM dept WHERE dname='xxx' or loc='xx' or deptno=45;
 
 ##### b树（平衡多路查找树）
 
-![image-20230826160127383](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230826160127383.png)
+![B Tree](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/database/b-tree.png)
 
 B树是一种平衡的多分树，通常我们说 m阶(B树中一个节点的子节点数目的最大值) 的B树，它必须满足如下条件：
 
@@ -218,7 +218,7 @@ B树是一种平衡的多分树，通常我们说 m阶(B树中一个节点的子
 
 ##### b+树
 
-![b+tree](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//b+tree.png)
+![B Plus Tree](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/database/b-plus-tree.png)
 
 -   所有的叶子结点中包含了全部关键字的信息，及指向含有这些关键字记录的指针，且叶子结点本身依关键字的大小自小而大的顺序链接。 (而B树的叶子节点并没有包括全部需要查找的信息)；
 -   所有的非终端结点可以看成是索引部分，结点中仅含有其子树根结点中最大（或最小）关键字。 (而B树的非终节点也包含需要查找的有效信息)；

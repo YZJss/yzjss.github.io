@@ -4,7 +4,7 @@
 
 ## SQL语法顺序
 
-![image-20230218182106153](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230218182106153.png)
+![Sql Execution Order](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sql/sql-execution-order.png)
 
 ## SQL
 
@@ -317,7 +317,7 @@ SELECT 列1,列2,列3 FROM 表1,表2 WHERE 表1.列4 = 表2.列4;
 
 没有联结条件的表关系返回的结果为笛卡儿积。检索出的行的数目将是第一个表中的行数乘以第二个表中的行数。
 
-![join](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//join.jpg)
+![Sql Join](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sql/sql-join.jpg)
 
 可视化网站：[https://joins.spathon.com/](https://joins.spathon.com/)
 

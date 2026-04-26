@@ -96,7 +96,7 @@ vector底层是一个动态数组，包含三个迭代器，start 和 finish 之
 
 对vector的任何操作一旦引起了空间的重新分配，指向源vector的所有迭代器都会失效
 
-![image-20210910184701486](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210910184701486.png)
+![Vector Capacity](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/stl/vector-capacity.png)
 
 ### vector中的 size 和 capacity 的区别？
 
@@ -159,7 +159,7 @@ $$
 -   **list不支持随机存取，**适合需要大量的插入和删除，而不关心随机存取的应用场景。
     
 
-![image-20210910211801644](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210910211801644.png)
+![List Structure](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/stl/list-structure.png)
 
 ### list常用函数
 

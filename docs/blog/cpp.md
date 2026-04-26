@@ -48,7 +48,7 @@
 
 **gcc**是GNU编译器合集，能编译C, C++, Objective-C, Objective-C++, Fortran, Ada, D, Go, and BRIG (HSAIL)多种语言，**g++**能编译 c & c++，**g++会自动链接标准库STL，而gcc不会自动链接STL**
 
-![image-20210919202217064](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/image-20210919202217064.png)
+![Compile Process](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/compile-process.png)
 
 `g++ test.cpp -o test`或`g++ test.cpp` 会自动执行上述流程
 
@@ -223,7 +223,7 @@ NULL
 
 ### C++内存分布模型
 
-![img](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//7AFBB1602613EC52B265D7A54AD27330)
+![Cpp Memory Layout](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/cpp-memory-layout.png)
 
 如上图，**从低地址到高地址，一个程序由代码段、数据段、BSS段、堆栈段组成。**
 
@@ -687,7 +687,7 @@ C++11引入右值引用**&&**主要是为了实现**移动语义**和**完美转
 
 ### 移动语义的原理？
 
-![img](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//FB5C81ED3A220004B71069645F112867)
+![Move Semantics](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/move-semantics.png)
 
 移动语义为了避免临时对象的拷贝，为类增加移动构造函数。移动构造函数与拷贝构造不同，它并不是重新分配一块新的空间同时将要拷贝的对象复制过来，而是"拿"了过来，将自己的指针指向别人的资源，然后将别人的指针修改为nullptr
 
@@ -730,7 +730,7 @@ C++11引入右值引用**&&**主要是为了实现**移动语义**和**完美转
 
 多继承很容易产生错误，典型的就是菱形继承，是一种路径二义性的情况：
 
-![image-20210909102027074](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210909102027074.png)
+![Diamond Inheritance](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/diamond-inheritance.png)
 
 在一个派生类中保留间接基类的多份同名成员，虽然可以在不同的成员变量中分别存放不同的数据，但大多数情况下这是多余的：因为保留多份成员变量不仅占用较多的存储空间，还容易产生命名冲突。假如类 A 有一个成员变量 a，那么在类 D 中直接访问 a 就会产生歧义，编译器不知道它究竟来自 A -->B-->D 这条路径，还是来自 A-->C-->D 这条路径。下面是菱形继承的具体实现：
 
@@ -819,11 +819,11 @@ int main(){
 
 **虚继承的目的是让某个类做出声明，承诺愿意共享它的基类。其中，这个被共享的基类就称为虚基类（Virtual Base Class）**，本例中的 A 就是一个虚基类。在这种机制下，不论虚基类在继承体系中出现了多少次，在派生类中都只包含一份虚基类的成员。
 
-![image-20210909102539106](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210909102539106.png)
+![Virtual Inheritance](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/virtual-inheritance.png)
 
 C++标准库中的 iostream 类就是一个虚继承的实际应用案例。iostream 从 istream 和 ostream 直接继承而来，而 istream 和 ostream 又都继承自一个共同的名为 base\_ios 的类，是典型的菱形继承。此时 istream 和 ostream 必须采用虚继承，否则将导致 iostream 类中保留两份 base\_ios 类的成员。
 
-![image-20210909102606304](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210909102606304.png)
+![Iostream Diamond Inheritance](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/iostream-diamond-inheritance.png)
 
 ### 多态的实现？
 
@@ -839,7 +839,7 @@ C++实现虚函数的原理是**虚函数表+虚表指针**。
 
 同时为每个类的对象添加一个隐藏成员，该隐藏成员保存了指向该虚函数表的指针。该隐藏成员占据该对象的内存布局的最前端。
 
-![虚函数表](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8.png)
+![Virtual Function Table](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/virtual-function-table.png)
 
 ### 虚函数表在什么时候创建？每个对象都有一份虚函数表吗？
 

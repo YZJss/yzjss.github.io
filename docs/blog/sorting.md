@@ -161,7 +161,7 @@ vector<int> mergeSort(vector<int>& arr) {
 }
 ```
 
-![img](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/0.jpeg)
+![Merge Sort](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sorting/merge-sort.jpeg)
 
 ```c++
 #include "vector"

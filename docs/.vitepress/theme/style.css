@@ -1,0 +1,125 @@
+:root {
+  --vp-c-brand-1: #2563eb;
+  --vp-c-brand-2: #1d4ed8;
+  --vp-c-brand-3: #60a5fa;
+  --vp-c-bg: #fbfbfd;
+  --vp-c-bg-alt: #f3f4f6;
+  --vp-c-bg-soft: #f8fafc;
+  --vp-c-border: #e5e7eb;
+  --vp-c-divider: #e5e7eb;
+  --vp-font-family-base: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --vp-font-family-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  --vp-sidebar-width: 288px;
+}
+
+.dark {
+  --vp-c-bg: #111827;
+  --vp-c-bg-alt: #0f172a;
+  --vp-c-bg-soft: #1f2937;
+  --vp-c-border: #374151;
+  --vp-c-divider: #374151;
+}
+
+.VPNav {
+  border-bottom: 1px solid var(--vp-c-divider);
+  backdrop-filter: blur(16px);
+}
+
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 920px;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: 840px;
+}
+
+.vp-doc h1 {
+  font-size: 34px;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.vp-doc h2 {
+  margin-top: 32px;
+  border-top: 0;
+  padding-top: 0;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.vp-doc h3 {
+  letter-spacing: 0;
+}
+
+.vp-doc a {
+  text-underline-offset: 3px;
+}
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.VPHome {
+  padding-bottom: 32px;
+}
+
+.notes-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.notes-section {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  padding: 18px 20px;
+}
+
+.notes-section h2 {
+  margin: 0 0 12px;
+  padding: 0;
+  border: 0;
+  font-size: 17px;
+}
+
+.notes-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notes-section li + li {
+  margin-top: 8px;
+}
+
+.notes-section a {
+  display: block;
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: var(--vp-c-text-1);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.notes-section a:hover {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 720px) {
+  .notes-index {
+    grid-template-columns: 1fr;
+  }
+
+  .vp-doc h1 {
+    font-size: 30px;
+  }
+}

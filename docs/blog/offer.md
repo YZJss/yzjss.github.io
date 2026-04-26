@@ -557,7 +557,7 @@ public:
 
 ### [55 - I. 二叉树的深度](https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/?favorite=xb9nqhhg)
 
-![](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//offer55-1.png)
+![Offer 55 1](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/offer/offer-55-1.png)
 
 ```c++
 class Solution {
@@ -1400,7 +1400,7 @@ public:
 
 法二：
 
-![](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//offer04.png)
+![Offer 04](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/offer/offer-04.png)
 
 ```c++
 class Solution {

@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-04-26T13:37:45.977Z",
+  "renamed": [
+    {
+      "from": "images/cpp/c-plus-plus-内存分布模型.png",
+      "to": "images/cpp/cpp-memory-layout.png"
+    },
+    {
+      "from": "images/cpp/移动语义的原理.png",
+      "to": "images/cpp/move-semantics.png"
+    },
+    {
+      "from": "images/cpp/image-20210909102027074.png",
+      "to": "images/cpp/diamond-inheritance.png"
+    },
+    {
+      "from": "images/cpp/image-20210909102539106.png",
+      "to": "images/cpp/virtual-inheritance.png"
+    },
+    {
+      "from": "images/cpp/image-20210909102606304.png",
+      "to": "images/cpp/iostream-diamond-inheritance.png"
+    },
+    {
+      "from": "images/database/一条sql语句在数据库框架中的执行流程.png",
+      "to": "images/database/sql-execution-flow.png"
+    },
+    {
+      "from": "images/database/image-20230826160127383.png",
+      "to": "images/database/b-tree.png"
+    },
+    {
+      "from": "images/linux/chmod-权限.png",
+      "to": "images/linux/chmod-permission.png"
+    },
+    {
+      "from": "images/network/image-20230224151105745.png",
+      "to": "images/network/tcp-header.png"
+    },
+    {
+      "from": "images/network/image-20220914145846758.png",
+      "to": "images/network/tcp-three-way-handshake.png"
+    },
+    {
+      "from": "images/network/image-20220914154745203.png",
+      "to": "images/network/tcp-four-way-wave.png"
+    },
+    {
+      "from": "images/network/image-20230224174931014.png",
+      "to": "images/network/tcp-state-transition.png"
+    },
+    {
+      "from": "images/network/image-20230227100725672.png",
+      "to": "images/network/http-methods.png"
+    },
+    {
+      "from": "images/network/image-20230227100800953.png",
+      "to": "images/network/http-status-codes.png"
+    },
+    {
+      "from": "images/network/https的通信建立过程.png",
+      "to": "images/network/https-handshake.png"
+    },
+    {
+      "from": "images/network/mtu和mss分别是什么.png",
+      "to": "images/network/mtu-mss.png"
+    },
+    {
+      "from": "images/os/image-20210912191907237.png",
+      "to": "images/os/process-state-transition.png"
+    },
+    {
+      "from": "images/rpc/image-20220814221421663.png",
+      "to": "images/rpc/rpc-overview.png"
+    },
+    {
+      "from": "images/rpc/image-20220815133628010.png",
+      "to": "images/rpc/rpc-flow-01.png"
+    },
+    {
+      "from": "images/rpc/image-20220815184439376.png",
+      "to": "images/rpc/rpc-flow-02.png"
+    },
+    {
+      "from": "images/rpc/image-20220815120520672.png",
+      "to": "images/rpc/rpc-message-header.png"
+    },
+    {
+      "from": "images/sorting/6-归并排序.jpeg",
+      "to": "images/sorting/merge-sort.jpeg"
+    },
+    {
+      "from": "images/sql/image-20230218182106153.png",
+      "to": "images/sql/sql-execution-order.png"
+    },
+    {
+      "from": "images/stl/image-20210910184701486.png",
+      "to": "images/stl/vector-capacity.png"
+    },
+    {
+      "from": "images/stl/image-20210910211801644.png",
+      "to": "images/stl/list-structure.png"
+    },
+    {
+      "from": "images/webserver/image-20230329161251178.png",
+      "to": "images/webserver/proactor-workflow.png"
+    },
+    {
+      "from": "images/webserver/v2-ab874df7219895195def55a02fb390f7-1440w.webp",
+      "to": "images/webserver/threadpool-structure.webp"
+    },
+    {
+      "from": "images/webserver/http-conn-h.png",
+      "to": "images/webserver/http-connection-header.png"
+    },
+    {
+      "from": "images/webserver/v2-50f8a9c898447e79c04810883e7ed332-1440w.webp",
+      "to": "images/webserver/timer-list.webp"
+    }
+  ]
+}

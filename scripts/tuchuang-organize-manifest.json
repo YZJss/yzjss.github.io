@@ -1,0 +1,457 @@
+{
+  "generatedAt": "2026-04-26T13:36:36.998Z",
+  "moved": [
+    {
+      "from": "image-20210919202217064.png",
+      "to": "images/cpp/compile-process.png"
+    },
+    {
+      "from": "7AFBB1602613EC52B265D7A54AD27330",
+      "to": "images/cpp/c-plus-plus-内存分布模型.png"
+    },
+    {
+      "from": "FB5C81ED3A220004B71069645F112867",
+      "to": "images/cpp/移动语义的原理.png"
+    },
+    {
+      "from": "image-20210909102027074.png",
+      "to": "images/cpp/image-20210909102027074.png"
+    },
+    {
+      "from": "image-20210909102539106.png",
+      "to": "images/cpp/image-20210909102539106.png"
+    },
+    {
+      "from": "image-20210909102606304.png",
+      "to": "images/cpp/image-20210909102606304.png"
+    },
+    {
+      "from": "虚函数表.png",
+      "to": "images/cpp/virtual-function-table.png"
+    },
+    {
+      "from": "image-20230221145527162.png",
+      "to": "images/database/一条sql语句在数据库框架中的执行流程.png"
+    },
+    {
+      "from": "image-20230826160127383.png",
+      "to": "images/database/image-20230826160127383.png"
+    },
+    {
+      "from": "b+tree.png",
+      "to": "images/database/b-plus-tree.png"
+    },
+    {
+      "from": "1613835889.png",
+      "to": "images/linux/chmod-权限.png"
+    },
+    {
+      "from": "IMG_2233.PNG",
+      "to": "images/network/network-model-overview.png"
+    },
+    {
+      "from": "TCPIP.png",
+      "to": "images/network/tcp-ip-model.png"
+    },
+    {
+      "from": "截屏2023-08-15 13.43.45.png",
+      "to": "images/network/network-packet-capture.png"
+    },
+    {
+      "from": "image-20230224151105745.png",
+      "to": "images/network/image-20230224151105745.png"
+    },
+    {
+      "from": "image-20220914145846758.png",
+      "to": "images/network/image-20220914145846758.png"
+    },
+    {
+      "from": "image-20220914154745203.png",
+      "to": "images/network/image-20220914154745203.png"
+    },
+    {
+      "from": "image-20230224174931014.png",
+      "to": "images/network/image-20230224174931014.png"
+    },
+    {
+      "from": "2020062815271156.png",
+      "to": "images/network/http-status-code.png"
+    },
+    {
+      "from": "image-20230227100725672.png",
+      "to": "images/network/image-20230227100725672.png"
+    },
+    {
+      "from": "image-20230227100800953.png",
+      "to": "images/network/image-20230227100800953.png"
+    },
+    {
+      "from": "1062096-20210911221113316-1433252826.png",
+      "to": "images/network/https的通信建立过程.png"
+    },
+    {
+      "from": "v2-d38d3a8ab427e058b1796531558fba56_1440w.png",
+      "to": "images/network/mtu和mss分别是什么.png"
+    },
+    {
+      "from": "offer55-1.png",
+      "to": "images/offer/offer-55-1.png"
+    },
+    {
+      "from": "offer04.png",
+      "to": "images/offer/offer-04.png"
+    },
+    {
+      "from": "image-20210912191907237.png",
+      "to": "images/os/image-20210912191907237.png"
+    },
+    {
+      "from": "20210826152834.png",
+      "to": "images/os/socket.png"
+    },
+    {
+      "from": "system-call-procedure.png",
+      "to": "images/os/system-call-procedure.png"
+    },
+    {
+      "from": "68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f38363763653438376562643137653565666432333731386363613336666238312e706e67.png",
+      "to": "images/rpc/image-20220814221421663.png"
+    },
+    {
+      "from": "68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f34393566303135613766613636626631333930663962303034303161333765322e706e67.png",
+      "to": "images/rpc/image-20220815133628010.png"
+    },
+    {
+      "from": "68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f34366638306630373434323963666463313464346230626161653636363630332e706e67.png",
+      "to": "images/rpc/image-20220815184439376.png"
+    },
+    {
+      "from": "MPRPC.png",
+      "to": "images/rpc/mprpc-framework.png"
+    },
+    {
+      "from": "68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f34643737396238363435303962396238303731663636363637366237633937662e706e67.png",
+      "to": "images/rpc/image-20220815120520672.png"
+    },
+    {
+      "from": "ssh.png",
+      "to": "images/server-security/ssh-login.png"
+    },
+    {
+      "from": "01.png",
+      "to": "images/shadowsocks/shadowsocks-step-01.png"
+    },
+    {
+      "from": "02.png",
+      "to": "images/shadowsocks/shadowsocks-step-02.png"
+    },
+    {
+      "from": "03.png",
+      "to": "images/shadowsocks/shadowsocks-step-03.png"
+    },
+    {
+      "from": "0.jpeg",
+      "to": "images/sorting/6-归并排序.jpeg"
+    },
+    {
+      "from": "image-20230218182106153.png",
+      "to": "images/sql/image-20230218182106153.png"
+    },
+    {
+      "from": "join.jpg",
+      "to": "images/sql/sql-join.jpg"
+    },
+    {
+      "from": "image-20210910184701486.png",
+      "to": "images/stl/image-20210910184701486.png"
+    },
+    {
+      "from": "image-20210910211801644.png",
+      "to": "images/stl/image-20210910211801644.png"
+    },
+    {
+      "from": "tinywebserver.jfif",
+      "to": "images/webserver/tinywebserver.jfif"
+    },
+    {
+      "from": "image-20230329161251178.png",
+      "to": "images/webserver/image-20230329161251178.png"
+    },
+    {
+      "from": "v2-ab874df7219895195def55a02fb390f7_1440w.webp",
+      "to": "images/webserver/v2-ab874df7219895195def55a02fb390f7-1440w.webp"
+    },
+    {
+      "from": "640",
+      "to": "images/webserver/http-conn-h.png"
+    },
+    {
+      "from": "640.jpg",
+      "to": "images/webserver/webserver-epoll-01.jpg"
+    },
+    {
+      "from": "642.jpg",
+      "to": "images/webserver/webserver-epoll-02.jpg"
+    },
+    {
+      "from": "643.jpg",
+      "to": "images/webserver/webserver-epoll-03.jpg"
+    },
+    {
+      "from": "v2-50f8a9c898447e79c04810883e7ed332_1440w.webp",
+      "to": "images/webserver/v2-50f8a9c898447e79c04810883e7ed332-1440w.webp"
+    }
+  ],
+  "replacements": [
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/image-20210919202217064.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/compile-process.png"
+    },
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//7AFBB1602613EC52B265D7A54AD27330",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/c-plus-plus-内存分布模型.png"
+    },
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//FB5C81ED3A220004B71069645F112867",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/移动语义的原理.png"
+    },
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210909102027074.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/image-20210909102027074.png"
+    },
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210909102539106.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/image-20210909102539106.png"
+    },
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210909102606304.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/image-20210909102606304.png"
+    },
+    {
+      "file": "docs/blog/cpp.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/cpp/virtual-function-table.png"
+    },
+    {
+      "file": "docs/blog/database.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230221145527162.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/database/一条sql语句在数据库框架中的执行流程.png"
+    },
+    {
+      "file": "docs/blog/database.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230826160127383.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/database/image-20230826160127383.png"
+    },
+    {
+      "file": "docs/blog/database.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//b+tree.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/database/b-plus-tree.png"
+    },
+    {
+      "file": "docs/blog/linux-commands.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/1613835889.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/linux/chmod-权限.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//IMG_2233.PNG",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/network-model-overview.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//TCPIP.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/tcp-ip-model.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//%E6%88%AA%E5%B1%8F2023-08-15%2013.43.45.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/network-packet-capture.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230224151105745.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/image-20230224151105745.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/image-20220914145846758.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/image-20220914145846758.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/image-20220914154745203.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/image-20220914154745203.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230224174931014.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/image-20230224174931014.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//2020062815271156.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/http-status-code.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230227100725672.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/image-20230227100725672.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230227100800953.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/image-20230227100800953.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//1062096-20210911221113316-1433252826.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/https的通信建立过程.png"
+    },
+    {
+      "file": "docs/blog/network.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//v2-d38d3a8ab427e058b1796531558fba56_1440w.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/network/mtu和mss分别是什么.png"
+    },
+    {
+      "file": "docs/blog/offer.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//offer55-1.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/offer/offer-55-1.png"
+    },
+    {
+      "file": "docs/blog/offer.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//offer04.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/offer/offer-04.png"
+    },
+    {
+      "file": "docs/blog/os.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210912191907237.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/os/image-20210912191907237.png"
+    },
+    {
+      "file": "docs/blog/os.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//20210826152834.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/os/socket.png"
+    },
+    {
+      "file": "docs/blog/os.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//system-call-procedure.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/os/system-call-procedure.png"
+    },
+    {
+      "file": "docs/blog/rpc.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f38363763653438376562643137653565666432333731386363613336666238312e706e67.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/rpc/image-20220814221421663.png"
+    },
+    {
+      "file": "docs/blog/rpc.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f34393566303135613766613636626631333930663962303034303161333765322e706e67.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/rpc/image-20220815133628010.png"
+    },
+    {
+      "file": "docs/blog/rpc.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f34366638306630373434323963666463313464346230626161653636363630332e706e67.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/rpc/image-20220815184439376.png"
+    },
+    {
+      "file": "docs/blog/rpc.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//MPRPC.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/rpc/mprpc-framework.png"
+    },
+    {
+      "file": "docs/blog/rpc.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f696d675f636f6e766572742f34643737396238363435303962396238303731663636363637366237633937662e706e67.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/rpc/image-20220815120520672.png"
+    },
+    {
+      "file": "docs/blog/server-security.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//ssh.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/server-security/ssh-login.png"
+    },
+    {
+      "file": "docs/blog/shadowsocks.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//01.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/shadowsocks/shadowsocks-step-01.png"
+    },
+    {
+      "file": "docs/blog/shadowsocks.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//02.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/shadowsocks/shadowsocks-step-02.png"
+    },
+    {
+      "file": "docs/blog/shadowsocks.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//03.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/shadowsocks/shadowsocks-step-03.png"
+    },
+    {
+      "file": "docs/blog/sorting.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/0.jpeg",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sorting/6-归并排序.jpeg"
+    },
+    {
+      "file": "docs/blog/sql.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230218182106153.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sql/image-20230218182106153.png"
+    },
+    {
+      "file": "docs/blog/sql.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//join.jpg",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sql/sql-join.jpg"
+    },
+    {
+      "file": "docs/blog/stl.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210910184701486.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/stl/image-20210910184701486.png"
+    },
+    {
+      "file": "docs/blog/stl.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20210910211801644.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/stl/image-20210910211801644.png"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//tinywebserver.jfif",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/tinywebserver.jfif"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//image-20230329161251178.png",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/image-20230329161251178.png"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//v2-ab874df7219895195def55a02fb390f7_1440w.webp",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/v2-ab874df7219895195def55a02fb390f7-1440w.webp"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//640",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/http-conn-h.png"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//640.jpg",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/webserver-epoll-01.jpg"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//642.jpg",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/webserver-epoll-02.jpg"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//643.jpg",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/webserver-epoll-03.jpg"
+    },
+    {
+      "file": "docs/blog/webserver.md",
+      "from": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main//v2-50f8a9c898447e79c04810883e7ed332_1440w.webp",
+      "to": "https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/webserver/v2-50f8a9c898447e79c04810883e7ed332-1440w.webp"
+    }
+  ]
+}

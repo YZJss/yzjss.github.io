@@ -66,7 +66,7 @@ p
 
 每一文件或目录的访问权限都有三组，每组用三位表示，分别为文件属主的读、写和执行权限；与属主同组的用户的读、写和执行权限；系统中其他用户的读、写和执行权限。当用ls -l命令显示文件或目录的详细信息时，最左边的一列为文件的访问权限。
 
-![图片alt](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/1613835889.png)
+![Chmod Permission](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/linux/chmod-permission.png)
 
 文件权限的数字表示法基于字符（rwx）的权限计算而来，其目的是简化权限的表示方式。例如，若某个文件的权限为7，则代表可读、可写、可执行（4+2+1）；若权限为6，则代表可读、可写（4+2）。
 
