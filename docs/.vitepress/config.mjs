@@ -12,9 +12,36 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '笔记', link: '/blog/' },
+      { text: '机器学习', link: '/ml/' },
       { text: 'GitHub', link: 'https://github.com/YZJss/yzjss.github.io' }
     ],
     sidebar: {
+      '/ml/': [
+        {
+          text: '机器学习',
+          items: [
+            { text: '目录', link: '/ml/' },
+            { text: '第 1 章 引言', link: '/ml/basics' },
+            { text: '第 2 章 单变量线性回归', link: '/ml/linear-regression-one-variable' },
+            { text: '第 3 章 线性代数回顾', link: '/ml/linear-algebra-review' },
+            { text: '第 4 章 多变量线性回归', link: '/ml/linear-regression-multiple-variables' },
+            { text: '第 6 章 逻辑回归', link: '/ml/logistic-regression' },
+            { text: '第 7 章 正则化', link: '/ml/regularization' },
+            { text: '第 8 章 神经网络：表述', link: '/ml/neural-networks-representation' },
+            { text: '第 9 章 神经网络的学习', link: '/ml/neural-networks-learning' },
+            { text: '第 10 章 应用机器学习的建议', link: '/ml/advice-for-applying-ml' },
+            { text: '第 11 章 机器学习系统的设计', link: '/ml/ml-system-design' },
+            { text: '第 12 章 支持向量机', link: '/ml/svm' },
+            { text: '第 13 章 聚类', link: '/ml/clustering' },
+            { text: '第 14 章 降维', link: '/ml/dimensionality-reduction' },
+            { text: '第 15 章 异常检测', link: '/ml/anomaly-detection' },
+            { text: '第 16 章 推荐系统', link: '/ml/recommender-systems' },
+            { text: '第 17 章 大规模机器学习', link: '/ml/large-scale-ml' },
+            { text: '第 18 章 应用实例：图片文字识别', link: '/ml/photo-ocr' },
+            { text: '第 19 章 总结', link: '/ml/conclusion' }
+          ]
+        }
+      ],
       '/blog/': [
         {
           text: '目录',
