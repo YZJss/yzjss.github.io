@@ -60,6 +60,12 @@
   width: 100%;
 }
 
+.vp-doc sub,
+.vp-doc sup {
+  line-height: 0;
+  font-size: 0.78em;
+}
+
 .vp-doc div[class*='language-'] {
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
