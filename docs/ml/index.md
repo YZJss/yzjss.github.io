@@ -14,7 +14,7 @@
   <section class="notes-section">
     <h2>第 2 周</h2>
     <ul>
-      <li><a href="/ml/linear-regression-μltiple-variables">第 4 章 多变量线性回归</a></li>
+      <li><a href="/ml/linear-regression-multiple-variables">第 4 章 多变量线性回归</a></li>
     </ul>
   </section>
   <section class="notes-section">
