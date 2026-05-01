@@ -76,52 +76,91 @@
 }
 
 .notes-index {
+  margin-top: 28px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.notes-track {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  column-gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.notes-track-label {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+}
+
+.notes-track-label span {
+  display: block;
+  color: var(--vp-c-text-1);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.notes-track-label small {
+  display: block;
+  margin-top: 4px;
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.notes-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 24px;
-}
-
-.notes-section {
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
-  background: var(--vp-c-bg-soft);
-  padding: 18px 20px;
-}
-
-.notes-section h2 {
-  margin: 0 0 12px;
-  padding: 0;
-  border: 0;
-  font-size: 17px;
-}
-
-.notes-section ul {
+  gap: 4px 18px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.notes-section li + li {
-  margin-top: 8px;
+.notes-list li {
+  margin: 0;
 }
 
-.notes-section a {
-  display: block;
+.notes-list a {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: baseline;
+  min-height: 38px;
   border-radius: 6px;
-  padding: 6px 8px;
+  padding: 8px 10px;
   color: var(--vp-c-text-1);
-  font-weight: 500;
+  line-height: 1.45;
   text-decoration: none;
 }
 
-.notes-section a:hover {
-  background: var(--vp-c-bg);
+.notes-list a span {
+  color: var(--vp-c-text-3);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+}
+
+.notes-list a:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.notes-list a:hover span {
   color: var(--vp-c-brand-1);
 }
 
 @media (max-width: 720px) {
-  .notes-index {
+  .notes-track {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    padding: 22px 0;
+  }
+
+  .notes-track-label {
+    position: static;
+  }
+
+  .notes-list {
     grid-template-columns: 1fr;
   }
 
