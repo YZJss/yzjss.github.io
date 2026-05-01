@@ -38,7 +38,14 @@ export default defineConfig({
             { text: '第 16 章 推荐系统', link: '/ml/recommender-systems' },
             { text: '第 17 章 大规模机器学习', link: '/ml/large-scale-ml' },
             { text: '第 18 章 应用实例：图片文字识别', link: '/ml/photo-ocr' },
-            { text: '第 19 章 总结', link: '/ml/conclusion' }
+            { text: '第 19 章 总结', link: '/ml/conclusion' },
+            { text: '第 20 章 深度学习基础', link: '/ml/deep-learning-basics' },
+            { text: '第 21 章 卷积神经网络', link: '/ml/cnn' },
+            { text: '第 22 章 序列模型', link: '/ml/sequence-models' },
+            { text: '第 23 章 Transformer', link: '/ml/transformer' },
+            { text: '第 24 章 图神经网络', link: '/ml/gnn' },
+            { text: '第 25 章 生成模型', link: '/ml/generative-models' },
+            { text: '第 26 章 迁移学习与预训练模型', link: '/ml/transfer-learning-pretraining' }
           ]
         }
       ],

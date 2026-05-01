@@ -1,6 +1,6 @@
 # 机器学习
 
-按吴恩达机器学习课程整理，先从第 1 周开始。
+按吴恩达机器学习课程整理，第 1-19 章是机器学习主线；第 20 章开始补充深度学习和现代模型。
 
 <div class="notes-index">
   <section class="notes-section">
@@ -69,6 +69,18 @@
       <li><a href="/ml/large-scale-ml">第 17 章 大规模机器学习</a></li>
       <li><a href="/ml/photo-ocr">第 18 章 应用实例：图片文字识别</a></li>
       <li><a href="/ml/conclusion">第 19 章 总结</a></li>
+    </ul>
+  </section>
+  <section class="notes-section">
+    <h2>深度学习扩展</h2>
+    <ul>
+      <li><a href="/ml/deep-learning-basics">第 20 章 深度学习基础</a></li>
+      <li><a href="/ml/cnn">第 21 章 卷积神经网络</a></li>
+      <li><a href="/ml/sequence-models">第 22 章 序列模型</a></li>
+      <li><a href="/ml/transformer">第 23 章 Transformer</a></li>
+      <li><a href="/ml/gnn">第 24 章 图神经网络</a></li>
+      <li><a href="/ml/generative-models">第 25 章 生成模型</a></li>
+      <li><a href="/ml/transfer-learning-pretraining">第 26 章 迁移学习与预训练模型</a></li>
     </ul>
   </section>
 </div>
