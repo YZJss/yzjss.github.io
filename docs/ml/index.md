@@ -5,21 +5,29 @@
 <div class="notes-index notes-index-compact">
   <section class="notes-track">
     <div class="notes-track-label">
-      <span>基础和传统机器学习</span>
+      <span>基础概念</span>
       <small>Systematic ML</small>
     </div>
     <ol class="notes-list">
       <li><a href="/ml/basics"><span>01</span>机器学习概述</a></li>
       <li><a href="/ml/linear-algebra-review"><span>02</span>数学基础</a></li>
-      <li><a href="/ml/linear-regression-one-variable"><span>03</span>优化基础</a></li>
-      <li><a href="/ml/linear-regression-multiple-variables"><span>04</span>线性回归</a></li>
-      <li><a href="/ml/logistic-regression"><span>05</span>逻辑回归</a></li>
-      <li><a href="/ml/advice-for-applying-ml"><span>06</span>模型评估</a></li>
-      <li><a href="/ml/regularization"><span>07</span>正则化</a></li>
-      <li><a href="/ml/dimensionality-reduction"><span>08</span>特征工程和降维</a></li>
+      <li><a href="/ml/linear-regression-one-variable"><span>03</span>模型训练</a></li>
+      <li><a href="/ml/advice-for-applying-ml"><span>04</span>模型评估</a></li>
+      <li><a href="/ml/regularization"><span>05</span>正则化</a></li>
+    </ol>
+  </section>
+  <section class="notes-track">
+    <div class="notes-track-label">
+      <span>经典机器学习</span>
+      <small>Systematic ML</small>
+    </div>
+    <ol class="notes-list">
+      <li><a href="/ml/linear-regression-multiple-variables"><span>06</span>线性回归</a></li>
+      <li><a href="/ml/logistic-regression"><span>07</span>逻辑回归</a></li>
+      <li><a href="/ml/svm"><span>08</span>支持向量机</a></li>
       <li><a href="/ml/clustering"><span>09</span>聚类</a></li>
-      <li><a href="/ml/anomaly-detection"><span>10</span>异常检测</a></li>
-      <li><a href="/ml/svm"><span>11</span>支持向量机</a></li>
+      <li><a href="/ml/dimensionality-reduction"><span>10</span>特征工程和降维</a></li>
+      <li><a href="/ml/anomaly-detection"><span>11</span>异常检测</a></li>
       <li><a href="/ml/recommender-systems"><span>12</span>推荐系统</a></li>
     </ol>
   </section>
@@ -47,7 +55,7 @@
       <li><a href="/ml/ml-system-design"><span>20</span>概率图模型</a></li>
       <li><a href="/ml/generative-models"><span>21</span>生成模型</a></li>
       <li><a href="/ml/transfer-learning-pretraining"><span>22</span>迁移学习</a></li>
-      <li><a href="/ml/transformer"><span>23</span>大模型基础</a></li>
+      <li><a href="/ml/transformer"><span>23</span>大语言模型</a></li>
       <li><a href="/ml/ai-agent"><span>24</span>AI Agent</a></li>
     </ol>
   </section>
