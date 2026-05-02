@@ -1,12 +1,26 @@
-# 面试笔记
+# YZJ 的学习笔记
 
 <div class="notes-index notes-index-compact">
   <section class="notes-track">
     <div class="notes-track-label">
-      <span>C++</span>
-      <small>Language</small>
+      <span>机器学习</span>
+      <small>Machine Learning</small>
     </div>
     <ol class="notes-list">
+      <li><a href="/ml/">机器学习目录</a></li>
+      <li><a href="/ml/linear-regression-one-variable">模型训练</a></li>
+      <li><a href="/ml/cnn">卷积神经网络</a></li>
+      <li><a href="/ml/photo-ocr">Transformer</a></li>
+    </ol>
+  </section>
+
+  <section class="notes-track">
+    <div class="notes-track-label">
+      <span>面试笔记</span>
+      <small>Interview Notes</small>
+    </div>
+    <ol class="notes-list">
+      <li><a href="/blog/">面试笔记目录</a></li>
       <li><a href="/blog/cpp">C++</a></li>
       <li><a href="/blog/stl">STL</a></li>
       <li><a href="/blog/sorting">排序算法</a></li>

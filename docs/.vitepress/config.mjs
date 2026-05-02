@@ -2,13 +2,13 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '面试笔记',
-  description: '面试笔记',
+  title: 'YZJ',
+  description: 'YZJ 的学习笔记',
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
     logo: '/morty.ico',
-    siteTitle: '面试笔记',
+    siteTitle: 'YZJ',
     nav: [
       { text: '首页', link: '/' },
       { text: '面试笔记', link: '/blog/' },
