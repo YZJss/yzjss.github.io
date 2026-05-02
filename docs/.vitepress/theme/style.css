@@ -124,7 +124,7 @@
 
 .notes-list a {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: baseline;
   min-height: 38px;
   border-radius: 6px;

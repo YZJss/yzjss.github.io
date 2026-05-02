@@ -2,16 +2,16 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '笔记',
-  description: '笔记',
+  title: '面试笔记',
+  description: '面试笔记',
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
     logo: '/morty.ico',
-    siteTitle: '笔记',
+    siteTitle: '面试笔记',
     nav: [
       { text: '首页', link: '/' },
-      { text: '笔记', link: '/blog/' },
+      { text: '面试笔记', link: '/blog/' },
       { text: '机器学习', link: '/ml/' },
       { text: 'GitHub', link: 'https://github.com/YZJss/yzjss.github.io' }
     ],
@@ -36,7 +36,7 @@ export default defineConfig({
             { text: '第 8 章 支持向量机', link: '/ml/svm' },
             { text: '第 9 章 聚类', link: '/ml/clustering' },
             { text: '第 10 章 PCA', link: '/ml/dimensionality-reduction' },
-            { text: '第 11 章 随机森林', link: '/ml/random-forest' }
+            { text: '第 11 章 决策树', link: '/ml/random-forest' }
           ]
         },
         {
@@ -63,9 +63,9 @@ export default defineConfig({
       ],
       '/blog/': [
         {
-          text: '目录',
+          text: '面试笔记',
           items: [
-            { text: '文章列表', link: '/blog/' },
+            { text: '目录', link: '/blog/' },
             { text: 'C++', link: '/blog/cpp' },
             { text: 'STL', link: '/blog/stl' },
             { text: '计算机网络', link: '/blog/network' },
