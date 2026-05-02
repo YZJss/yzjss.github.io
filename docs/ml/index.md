@@ -26,9 +26,8 @@
       <li><a href="/ml/logistic-regression"><span>07</span>逻辑回归</a></li>
       <li><a href="/ml/svm"><span>08</span>支持向量机</a></li>
       <li><a href="/ml/clustering"><span>09</span>聚类</a></li>
-      <li><a href="/ml/dimensionality-reduction"><span>10</span>特征工程和降维</a></li>
-      <li><a href="/ml/anomaly-detection"><span>11</span>异常检测</a></li>
-      <li><a href="/ml/recommender-systems"><span>12</span>推荐系统</a></li>
+      <li><a href="/ml/dimensionality-reduction"><span>10</span>PCA</a></li>
+      <li><a href="/ml/random-forest"><span>11</span>随机森林</a></li>
     </ol>
   </section>
   <section class="notes-track">
@@ -37,13 +36,13 @@
       <small>Deep Learning</small>
     </div>
     <ol class="notes-list">
-      <li><a href="/ml/neural-networks-representation"><span>13</span>神经网络表示</a></li>
-      <li><a href="/ml/neural-networks-learning"><span>14</span>神经网络训练</a></li>
-      <li><a href="/ml/deep-learning-basics"><span>15</span>深度学习训练技巧</a></li>
-      <li><a href="/ml/cnn"><span>16</span>卷积神经网络</a></li>
-      <li><a href="/ml/sequence-models"><span>17</span>序列模型</a></li>
-      <li><a href="/ml/photo-ocr"><span>18</span>Transformer</a></li>
-      <li><a href="/ml/gnn"><span>19</span>图神经网络</a></li>
+      <li><a href="/ml/neural-networks-representation"><span>12</span>神经网络表示</a></li>
+      <li><a href="/ml/neural-networks-learning"><span>13</span>神经网络训练</a></li>
+      <li><a href="/ml/deep-learning-basics"><span>14</span>深度学习训练技巧</a></li>
+      <li><a href="/ml/cnn"><span>15</span>卷积神经网络</a></li>
+      <li><a href="/ml/sequence-models"><span>16</span>序列模型</a></li>
+      <li><a href="/ml/photo-ocr"><span>17</span>Transformer</a></li>
+      <li><a href="/ml/gnn"><span>18</span>图神经网络</a></li>
     </ol>
   </section>
   <section class="notes-track">
@@ -52,10 +51,10 @@
       <small>Modern AI</small>
     </div>
     <ol class="notes-list">
-      <li><a href="/ml/ml-system-design"><span>20</span>概率图模型</a></li>
-      <li><a href="/ml/generative-models"><span>21</span>生成模型</a></li>
-      <li><a href="/ml/transfer-learning-pretraining"><span>22</span>迁移学习</a></li>
-      <li><a href="/ml/ai-agent"><span>23</span>Dify 应用和 Agent</a></li>
+      <li><a href="/ml/ml-system-design"><span>19</span>概率图模型</a></li>
+      <li><a href="/ml/generative-models"><span>20</span>生成模型</a></li>
+      <li><a href="/ml/transfer-learning-pretraining"><span>21</span>迁移学习</a></li>
+      <li><a href="/ml/ai-agent"><span>22</span>Dify 应用和 Agent</a></li>
     </ol>
   </section>
 </div>

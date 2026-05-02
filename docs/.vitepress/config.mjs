@@ -35,30 +35,29 @@ export default defineConfig({
             { text: '第 7 章 逻辑回归', link: '/ml/logistic-regression' },
             { text: '第 8 章 支持向量机', link: '/ml/svm' },
             { text: '第 9 章 聚类', link: '/ml/clustering' },
-            { text: '第 10 章 特征工程和降维', link: '/ml/dimensionality-reduction' },
-            { text: '第 11 章 异常检测', link: '/ml/anomaly-detection' },
-            { text: '第 12 章 推荐系统', link: '/ml/recommender-systems' }
+            { text: '第 10 章 PCA', link: '/ml/dimensionality-reduction' },
+            { text: '第 11 章 随机森林', link: '/ml/random-forest' }
           ]
         },
         {
           text: '神经网络和深度学习',
           items: [
-            { text: '第 13 章 神经网络表示', link: '/ml/neural-networks-representation' },
-            { text: '第 14 章 神经网络训练', link: '/ml/neural-networks-learning' },
-            { text: '第 15 章 深度学习训练技巧', link: '/ml/deep-learning-basics' },
-            { text: '第 16 章 卷积神经网络', link: '/ml/cnn' },
-            { text: '第 17 章 序列模型', link: '/ml/sequence-models' },
-            { text: '第 18 章 Transformer', link: '/ml/photo-ocr' },
-            { text: '第 19 章 图神经网络', link: '/ml/gnn' }
+            { text: '第 12 章 神经网络表示', link: '/ml/neural-networks-representation' },
+            { text: '第 13 章 神经网络训练', link: '/ml/neural-networks-learning' },
+            { text: '第 14 章 深度学习训练技巧', link: '/ml/deep-learning-basics' },
+            { text: '第 15 章 卷积神经网络', link: '/ml/cnn' },
+            { text: '第 16 章 序列模型', link: '/ml/sequence-models' },
+            { text: '第 17 章 Transformer', link: '/ml/photo-ocr' },
+            { text: '第 18 章 图神经网络', link: '/ml/gnn' }
           ]
         },
         {
           text: '现代模型和应用',
           items: [
-            { text: '第 20 章 概率图模型', link: '/ml/ml-system-design' },
-            { text: '第 21 章 生成模型', link: '/ml/generative-models' },
-            { text: '第 22 章 迁移学习', link: '/ml/transfer-learning-pretraining' },
-            { text: '第 23 章 Dify 应用和 Agent', link: '/ml/ai-agent' }
+            { text: '第 19 章 概率图模型', link: '/ml/ml-system-design' },
+            { text: '第 20 章 生成模型', link: '/ml/generative-models' },
+            { text: '第 21 章 迁移学习', link: '/ml/transfer-learning-pretraining' },
+            { text: '第 22 章 Dify 应用和 Agent', link: '/ml/ai-agent' }
           ]
         }
       ],
