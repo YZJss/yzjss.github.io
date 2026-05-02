@@ -6,7 +6,7 @@
   <section class="notes-track">
     <div class="notes-track-label">
       <span>基础概念</span>
-      <small>Systematic ML</small>
+      <small>Foundations</small>
     </div>
     <ol class="notes-list">
       <li><a href="/ml/basics"><span>01</span>机器学习概述</a></li>
@@ -19,7 +19,7 @@
   <section class="notes-track">
     <div class="notes-track-label">
       <span>经典机器学习</span>
-      <small>Systematic ML</small>
+      <small>Classical ML</small>
     </div>
     <ol class="notes-list">
       <li><a href="/ml/linear-regression-multiple-variables"><span>06</span>线性回归</a></li>
@@ -34,7 +34,7 @@
   <section class="notes-track">
     <div class="notes-track-label">
       <span>神经网络和深度学习</span>
-      <small>Systematic ML</small>
+      <small>Deep Learning</small>
     </div>
     <ol class="notes-list">
       <li><a href="/ml/neural-networks-representation"><span>13</span>神经网络表示</a></li>
@@ -42,31 +42,20 @@
       <li><a href="/ml/deep-learning-basics"><span>15</span>深度学习训练技巧</a></li>
       <li><a href="/ml/cnn"><span>16</span>卷积神经网络</a></li>
       <li><a href="/ml/sequence-models"><span>17</span>序列模型</a></li>
-      <li><a href="/ml/photo-ocr"><span>18</span>Attention 和 Transformer</a></li>
+      <li><a href="/ml/photo-ocr"><span>18</span>Transformer</a></li>
       <li><a href="/ml/gnn"><span>19</span>图神经网络</a></li>
     </ol>
   </section>
   <section class="notes-track">
     <div class="notes-track-label">
       <span>现代模型和应用系统</span>
-      <small>Systematic ML</small>
+      <small>Modern AI</small>
     </div>
     <ol class="notes-list">
       <li><a href="/ml/ml-system-design"><span>20</span>概率图模型</a></li>
       <li><a href="/ml/generative-models"><span>21</span>生成模型</a></li>
       <li><a href="/ml/transfer-learning-pretraining"><span>22</span>迁移学习</a></li>
-      <li><a href="/ml/transformer"><span>23</span>大语言模型</a></li>
-      <li><a href="/ml/ai-agent"><span>24</span>AI Agent</a></li>
-    </ol>
-  </section>
-  <section class="notes-track">
-    <div class="notes-track-label">
-      <span>工程实践和复习</span>
-      <small>Systematic ML</small>
-    </div>
-    <ol class="notes-list">
-      <li><a href="/ml/large-scale-ml"><span>25</span>机器学习工程</a></li>
-      <li><a href="/ml/conclusion"><span>26</span>综合复习</a></li>
+      <li><a href="/ml/ai-agent"><span>23</span>Dify 应用和 Agent</a></li>
     </ol>
   </section>
 </div>
