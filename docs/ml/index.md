@@ -5,7 +5,7 @@
 <div class="notes-index notes-index-compact">
   <section class="notes-track">
     <div class="notes-track-label">
-      <span>基础与传统机器学习</span>
+      <span>基础和传统机器学习</span>
       <small>Systematic ML</small>
     </div>
     <ol class="notes-list">
@@ -13,52 +13,52 @@
       <li><a href="/ml/linear-algebra-review"><span>02</span>数学基础</a></li>
       <li><a href="/ml/linear-regression-one-variable"><span>03</span>优化基础</a></li>
       <li><a href="/ml/linear-regression-multiple-variables"><span>04</span>线性回归</a></li>
-      <li><a href="/ml/logistic-regression"><span>05</span>逻辑回归与分类模型</a></li>
-      <li><a href="/ml/advice-for-applying-ml"><span>06</span>模型评估与泛化</a></li>
-      <li><a href="/ml/regularization"><span>07</span>正则化与模型复杂度</a></li>
-      <li><a href="/ml/dimensionality-reduction"><span>08</span>特征工程、特征选择与降维</a></li>
-      <li><a href="/ml/clustering"><span>09</span>无监督学习与聚类</a></li>
-      <li><a href="/ml/anomaly-detection"><span>10</span>概率模型与异常检测</a></li>
-      <li><a href="/ml/svm"><span>11</span>支持向量机与核方法</a></li>
-      <li><a href="/ml/recommender-systems"><span>12</span>推荐系统与表示学习</a></li>
+      <li><a href="/ml/logistic-regression"><span>05</span>逻辑回归</a></li>
+      <li><a href="/ml/advice-for-applying-ml"><span>06</span>模型评估</a></li>
+      <li><a href="/ml/regularization"><span>07</span>正则化</a></li>
+      <li><a href="/ml/dimensionality-reduction"><span>08</span>特征工程和降维</a></li>
+      <li><a href="/ml/clustering"><span>09</span>聚类</a></li>
+      <li><a href="/ml/anomaly-detection"><span>10</span>异常检测</a></li>
+      <li><a href="/ml/svm"><span>11</span>支持向量机</a></li>
+      <li><a href="/ml/recommender-systems"><span>12</span>推荐系统</a></li>
     </ol>
   </section>
   <section class="notes-track">
     <div class="notes-track-label">
-      <span>神经网络与深度学习</span>
+      <span>神经网络和深度学习</span>
       <small>Systematic ML</small>
     </div>
     <ol class="notes-list">
       <li><a href="/ml/neural-networks-representation"><span>13</span>神经网络表示</a></li>
       <li><a href="/ml/neural-networks-learning"><span>14</span>神经网络训练</a></li>
       <li><a href="/ml/deep-learning-basics"><span>15</span>深度学习训练技巧</a></li>
-      <li><a href="/ml/cnn"><span>16</span>卷积神经网络与视觉任务</a></li>
+      <li><a href="/ml/cnn"><span>16</span>卷积神经网络</a></li>
       <li><a href="/ml/sequence-models"><span>17</span>序列模型</a></li>
-      <li><a href="/ml/photo-ocr"><span>18</span>Transformer 与注意力机制</a></li>
+      <li><a href="/ml/photo-ocr"><span>18</span>Attention 和 Transformer</a></li>
       <li><a href="/ml/gnn"><span>19</span>图神经网络</a></li>
     </ol>
   </section>
   <section class="notes-track">
     <div class="notes-track-label">
-      <span>现代模型与应用系统</span>
+      <span>现代模型和应用系统</span>
       <small>Systematic ML</small>
     </div>
     <ol class="notes-list">
-      <li><a href="/ml/ml-system-design"><span>20</span>概率图模型、贝叶斯方法与因果推断</a></li>
+      <li><a href="/ml/ml-system-design"><span>20</span>概率图模型</a></li>
       <li><a href="/ml/generative-models"><span>21</span>生成模型</a></li>
-      <li><a href="/ml/transfer-learning-pretraining"><span>22</span>迁移学习与预训练模型</a></li>
+      <li><a href="/ml/transfer-learning-pretraining"><span>22</span>迁移学习</a></li>
       <li><a href="/ml/transformer"><span>23</span>大模型基础</a></li>
-      <li><a href="/ml/ai-agent"><span>24</span>AI Agent 与应用系统</a></li>
+      <li><a href="/ml/ai-agent"><span>24</span>AI Agent</a></li>
     </ol>
   </section>
   <section class="notes-track">
     <div class="notes-track-label">
-      <span>工程实践与复习</span>
+      <span>工程实践和复习</span>
       <small>Systematic ML</small>
     </div>
     <ol class="notes-list">
-      <li><a href="/ml/large-scale-ml"><span>25</span>机器学习系统设计与工程实践</a></li>
-      <li><a href="/ml/conclusion"><span>26</span>综合复习与考点索引</a></li>
+      <li><a href="/ml/large-scale-ml"><span>25</span>机器学习工程</a></li>
+      <li><a href="/ml/conclusion"><span>26</span>综合复习</a></li>
     </ol>
   </section>
 </div>

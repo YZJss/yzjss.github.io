@@ -1,4 +1,4 @@
-# 第 18 章 Transformer 与注意力机制
+# 第 18 章 Attention 和 Transformer
 
 Transformer 是现代深度学习中非常重要的结构，广泛用于大语言模型、机器翻译、文本分类、图像识别和多模态任务。
 
