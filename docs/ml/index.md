@@ -12,7 +12,6 @@
       <li><a href="/ml/linear-regression-one-variable">模型训练</a></li>
       <li><a href="/ml/advice-for-applying-ml">模型评估</a></li>
       <li><a href="/ml/regularization">正则化</a></li>
-      <li><a href="/ml/reinforcement-learning">强化学习</a></li>
     </ol>
   </section>
   <section class="notes-track">
@@ -54,6 +53,7 @@
       <li><a href="/ml/generative-models">生成模型</a></li>
       <li><a href="/ml/transfer-learning-pretraining">迁移学习</a></li>
       <li><a href="/ml/ai-agent">Dify 应用和 Agent</a></li>
+      <li><a href="/ml/reinforcement-learning">强化学习</a></li>
     </ol>
   </section>
 </div>

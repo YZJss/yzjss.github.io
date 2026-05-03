@@ -25,8 +25,7 @@ export default defineConfig({
             { text: '第 2 章 数学基础', link: '/ml/linear-algebra-review' },
             { text: '第 3 章 模型训练', link: '/ml/linear-regression-one-variable' },
             { text: '第 4 章 模型评估', link: '/ml/advice-for-applying-ml' },
-            { text: '第 5 章 正则化', link: '/ml/regularization' },
-            { text: '第 23 章 强化学习', link: '/ml/reinforcement-learning' }
+            { text: '第 5 章 正则化', link: '/ml/regularization' }
           ]
         },
         {
@@ -58,7 +57,8 @@ export default defineConfig({
             { text: '第 19 章 概率图模型', link: '/ml/ml-system-design' },
             { text: '第 20 章 生成模型', link: '/ml/generative-models' },
             { text: '第 21 章 迁移学习', link: '/ml/transfer-learning-pretraining' },
-            { text: '第 22 章 Dify 应用和 Agent', link: '/ml/ai-agent' }
+            { text: '第 22 章 Dify 应用和 Agent', link: '/ml/ai-agent' },
+            { text: '第 23 章 强化学习', link: '/ml/reinforcement-learning' }
           ]
         }
       ],
