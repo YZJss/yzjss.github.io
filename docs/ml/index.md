@@ -34,11 +34,10 @@
       <small>Deep Learning</small>
     </div>
     <ol class="notes-list">
-      <li><a href="/ml/neural-networks-representation">神经网络表示</a></li>
-      <li><a href="/ml/neural-networks-learning">神经网络训练</a></li>
-      <li><a href="/ml/deep-learning-basics">深度学习训练技巧</a></li>
+      <li><a href="/ml/neural-networks-representation">神经网络基础</a></li>
       <li><a href="/ml/cnn">卷积神经网络</a></li>
-      <li><a href="/ml/sequence-models">序列模型</a></li>
+      <li><a href="/ml/rnn">RNN</a></li>
+      <li><a href="/ml/lstm">LSTM</a></li>
       <li><a href="/ml/photo-ocr">Transformer</a></li>
       <li><a href="/ml/gnn">图神经网络</a></li>
     </ol>
@@ -49,9 +48,9 @@
       <small>Modern AI</small>
     </div>
     <ol class="notes-list">
-      <li><a href="/ml/ml-system-design">概率图模型</a></li>
-      <li><a href="/ml/generative-models">生成模型</a></li>
-      <li><a href="/ml/transfer-learning-pretraining">迁移学习</a></li>
+      <li><a href="/ml/autoencoder">自编码器</a></li>
+      <li><a href="/ml/gan">GAN</a></li>
+      <li><a href="/ml/diffusion-models">扩散模型</a></li>
       <li><a href="/ml/ai-agent">Dify 应用和 Agent</a></li>
       <li><a href="/ml/reinforcement-learning">强化学习</a></li>
     </ol>
