@@ -25,7 +25,8 @@ export default defineConfig({
             { text: '第 2 章 数学基础', link: '/ml/linear-algebra-review' },
             { text: '第 3 章 模型训练', link: '/ml/linear-regression-one-variable' },
             { text: '第 4 章 模型评估', link: '/ml/advice-for-applying-ml' },
-            { text: '第 5 章 正则化', link: '/ml/regularization' }
+            { text: '第 5 章 正则化', link: '/ml/regularization' },
+            { text: '第 23 章 强化学习', link: '/ml/reinforcement-learning' }
           ]
         },
         {
