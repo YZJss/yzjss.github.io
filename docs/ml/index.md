@@ -36,8 +36,7 @@
     <ol class="notes-list">
       <li><a href="/ml/neural-networks-representation">神经网络基础</a></li>
       <li><a href="/ml/cnn">卷积神经网络</a></li>
-      <li><a href="/ml/rnn">RNN</a></li>
-      <li><a href="/ml/lstm">LSTM</a></li>
+      <li><a href="/ml/rnn">序列模型：RNN 和 LSTM</a></li>
       <li><a href="/ml/photo-ocr">Transformer</a></li>
       <li><a href="/ml/gnn">图神经网络</a></li>
     </ol>
