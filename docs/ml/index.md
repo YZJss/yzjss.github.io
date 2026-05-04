@@ -36,8 +36,9 @@
     <ol class="notes-list">
       <li><a href="/ml/neural-networks-representation">神经网络基础</a></li>
       <li><a href="/ml/cnn">卷积神经网络</a></li>
-      <li><a href="/ml/rnn">序列模型：RNN 和 LSTM</a></li>
-      <li><a href="/ml/photo-ocr">Transformer</a></li>
+      <li><a href="/ml/cnn-mnist">MNIST CNN 实操</a></li>
+      <li><a href="/ml/rnn">序列模型</a></li>
+      <li><a href="/ml/transformer">Transformer</a></li>
       <li><a href="/ml/gnn">图神经网络</a></li>
     </ol>
   </section>
@@ -50,7 +51,7 @@
       <li><a href="/ml/autoencoder">自编码器</a></li>
       <li><a href="/ml/gan">GAN</a></li>
       <li><a href="/ml/diffusion-models">扩散模型</a></li>
-      <li><a href="/ml/ai-agent">Dify 应用和 Agent</a></li>
+      <li><a href="/ml/ai-agent">AI 应用系统：Dify 和 Agent</a></li>
       <li><a href="/ml/reinforcement-learning">强化学习</a></li>
     </ol>
   </section>

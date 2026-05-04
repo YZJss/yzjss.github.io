@@ -44,8 +44,9 @@ export default defineConfig({
           items: [
             { text: '第 12 章 神经网络基础', link: '/ml/neural-networks-representation' },
             { text: '第 13 章 卷积神经网络', link: '/ml/cnn' },
-            { text: '第 14 章 序列模型：RNN 和 LSTM', link: '/ml/rnn' },
-            { text: '第 15 章 Transformer', link: '/ml/photo-ocr' },
+            { text: '附录：MNIST CNN 实操', link: '/ml/cnn-mnist' },
+            { text: '第 14 章 序列模型', link: '/ml/rnn' },
+            { text: '第 15 章 Transformer', link: '/ml/transformer' },
             { text: '第 16 章 图神经网络', link: '/ml/gnn' }
           ]
         },
@@ -55,7 +56,7 @@ export default defineConfig({
             { text: '第 17 章 自编码器', link: '/ml/autoencoder' },
             { text: '第 18 章 GAN', link: '/ml/gan' },
             { text: '第 19 章 扩散模型', link: '/ml/diffusion-models' },
-            { text: '第 20 章 Dify 应用和 Agent', link: '/ml/ai-agent' },
+            { text: '第 20 章 AI 应用系统：Dify 和 Agent', link: '/ml/ai-agent' },
             { text: '第 21 章 强化学习', link: '/ml/reinforcement-learning' }
           ]
         }

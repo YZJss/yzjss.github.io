@@ -80,7 +80,7 @@ $$
 
 信息增益越大，说明划分后节点越纯。
 
-ID3 决策树使用信息增益选择划分特征。
+ID3（Iterative Dichotomiser 3）决策树使用信息增益选择划分特征。
 
 ## 11.5 信息增益率
 
@@ -134,7 +134,7 @@ Gini(D,A)
 Gini(D_j)
 $$
 
-CART 分类树通常选择让划分后基尼指数最小的特征和阈值。
+CART（Classification and Regression Tree）分类树通常选择让划分后基尼指数最小的特征和阈值。
 
 ## 11.7 连续特征如何划分
 
