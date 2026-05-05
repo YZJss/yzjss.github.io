@@ -1,315 +1,206 @@
 # 排序算法
 
-## 1 冒泡排序
+## 冒泡排序
+
+冒泡排序每一轮把当前未排序区间中的最大值交换到末尾。
 
 ```c++
-void bubblesort(vector<int> &nums) {
+void bubbleSort(vector<int>& nums) {
     for (int i = 0; i < nums.size(); ++i) {
-        for (int j = 0; j < nums.size() - 1 - i; ++j) {
+        bool swapped = false;
+        for (int j = 0; j + 1 < nums.size() - i; ++j) {
             if (nums[j] > nums[j + 1]) {
                 swap(nums[j], nums[j + 1]);
+                swapped = true;
             }
+        }
+        if (!swapped) {
+            break;
         }
     }
 }
 ```
 
-## 2 选择排序
+## 选择排序
+
+选择排序每一轮从未排序区间中选出最小值，放到当前区间开头。
 
 ```c++
-void selectsort(vector<int> &nums) {
-    for (int i = 0; i < nums.size() - 1; ++i) {
-        int min_index = i;
+void selectSort(vector<int>& nums) {
+    for (int i = 0; i + 1 < nums.size(); ++i) {
+        int minIndex = i;
         for (int j = i + 1; j < nums.size(); ++j) {
-            if (nums[j] < nums[min_index]) {
-                min_index = j;
+            if (nums[j] < nums[minIndex]) {
+                minIndex = j;
             }
         }
-        if (min_index != i) {
-            swap(nums[min_index], nums[i]);
+        if (minIndex != i) {
+            swap(nums[minIndex], nums[i]);
         }
     }
 }
 ```
 
-## 3 插入排序
+## 插入排序
+
+插入排序把当前元素插入到前面已经有序的区间中，适合数据量小或基本有序的场景。
 
 ```c++
-void insertsort(vector<int> &num) {
-    for (int i = 1; i < num.size(); i++) {
-        int insert_num = num[i], j;
-        for (j = i - 1; j >= 0; j--) {
-            if (num[j] > insert_num)
-                num[j + 1] = num[j];
-            else
-                break;
+void insertSort(vector<int>& nums) {
+    for (int i = 1; i < nums.size(); ++i) {
+        int value = nums[i];
+        int j = i - 1;
+        while (j >= 0 && nums[j] > value) {
+            nums[j + 1] = nums[j];
+            --j;
         }
-        num[j + 1] = insert_num;
+        nums[j + 1] = value;
     }
 }
 ```
 
-## 4 快速排序
+## 快速排序
+
+快速排序通过一趟划分把数组分成两部分：左边不大于基准值，右边不小于基准值，然后递归处理左右区间。
 
 ```c++
-int partition(vector<int> &arr, int low, int high) {
-    int pivot = arr[high];  
-    int i = (low - 1);      
-    for (int j = low; j < high; j++) {
-        if (arr[j] <= pivot) {
-            i++;
-            swap(arr[j], arr[i]);
+int partition(vector<int>& nums, int left, int right) {
+    int pivot = nums[right];
+    int i = left - 1;
+    for (int j = left; j < right; ++j) {
+        if (nums[j] <= pivot) {
+            ++i;
+            swap(nums[i], nums[j]);
         }
     }
-    swap(arr[i + 1], arr[high]);
-    return (i + 1);
+    swap(nums[i + 1], nums[right]);
+    return i + 1;
 }
 
-void quicksort(vector<int> &arr, int low, int high) {
-    if (low < high) {
-        int p = partition(arr, low, high);
-        quicksort(arr, low, p - 1);
-        quicksort(arr, p + 1, high);
-    }
-}
-```
-
-```c++
-void quicksort(vector<int> &v,int start,int end) {//快速排序
-    if (start < end) {
-        int base=v[start];//定下基值
-        int low = start;//这里叫低指针好了（设置一个变量来充当指针的作用）
-        int heigh =end+1;//那这里叫高指针吧
-        while (low<high) {
-            while (low < end && v[++low] <= base);//从左往右找到数组中第一个比base大的值为止
-            while (heigh > start && v[--heigh] >= base);//从右往左找到数组中第一个比base小的值为止
-            if (low < heigh) {
-                swap(v[low], v[heigh]);//交换
-            }
-        }
-        swap(v[start], v[heigh]);//确定了base最后所在的位置
-        quicksort(v,start,heigh-1);//分而治之的思想进行递归调用，不断的确定每个base排序后最后的所在位置
-        quicksort(v,heigh+1,end);
-    }
-}
-```
-
-## 5 堆排序
-
-```c++
-void heapify(vector<int> &nums, int n, int i) {
-    if (i >= n) {
+void quickSort(vector<int>& nums, int left, int right) {
+    if (left >= right) {
         return;
     }
-    int c1 = 2 * i + 1; //子节点 c1 c2
-    int c2 = 2 * i + 2;
-    int max = i;    // 父节点  max
-    if (c1 < n && nums[c1] > nums[max]) {
-        max = c1;
+    int mid = partition(nums, left, right);
+    quickSort(nums, left, mid - 1);
+    quickSort(nums, mid + 1, right);
+}
+```
+
+另一种双指针写法：
+
+```c++
+void quickSort(vector<int>& nums, int left, int right) {
+    if (left >= right) {
+        return;
     }
-    if (c2 < n && nums[c2] > nums[max]) {
-        max = c2;
+
+    int pivot = nums[left];
+    int i = left;
+    int j = right;
+
+    while (i < j) {
+        while (i < j && nums[j] >= pivot) {
+            --j;
+        }
+        while (i < j && nums[i] <= pivot) {
+            ++i;
+        }
+        if (i < j) {
+            swap(nums[i], nums[j]);
+        }
     }
-    if (max != i) {
-        swap(nums[max], nums[i]);
-        heapify(nums, n, max);
+
+    swap(nums[left], nums[i]);
+    quickSort(nums, left, i - 1);
+    quickSort(nums, i + 1, right);
+}
+```
+
+## 堆排序
+
+堆排序先建立大根堆，然后不断把堆顶最大值交换到数组末尾，再调整剩余元素。
+
+```c++
+void heapify(vector<int>& nums, int n, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left < n && nums[left] > nums[largest]) {
+        largest = left;
+    }
+    if (right < n && nums[right] > nums[largest]) {
+        largest = right;
+    }
+    if (largest != i) {
+        swap(nums[i], nums[largest]);
+        heapify(nums, n, largest);
     }
 }
 
-void build_heap(vector<int> &nums, int n) {
-    int last_node = n - 1;
-    int parent = (last_node - 1) / 2;
-    for (int i = parent; i >= 0; --i) {
+void heapSort(vector<int>& nums) {
+    int n = nums.size();
+    for (int i = n / 2 - 1; i >= 0; --i) {
         heapify(nums, n, i);
     }
-}
-
-void heap_sort(vector<int> &nums, int n) {
-    build_heap(nums, n);
-    for (int i = n - 1; i >= 0; i--) {
-        swap(nums[i], nums[0]);
+    for (int i = n - 1; i > 0; --i) {
+        swap(nums[0], nums[i]);
         heapify(nums, i, 0);
     }
 }
 ```
 
-## 6 归并排序
+## 归并排序
 
-```c++
-vector<int> merge(vector<int> left, vector<int> right) {
-    vector<int> res;
-    int i = 0, j = 0;
-    while (i < left.size() && j < right.size()) {
-        if (left[i] <= right[j])
-            res.push_back(left[i++]);
-        else
-            res.push_back(right[j++]);
-    }
-    if (i == left.size())
-        res.insert(res.end(), right.begin() + j, right.end());
-    else if (j == right.size())
-        res.insert(res.end(), left.begin() + i, left.end());
-    return res;
-}
-
-vector<int> mergeSort(vector<int>& arr) {
-    if (arr.size() < 2) return arr;
-    int mid = arr.size() / 2;
-    vector<int> left(arr.begin(), arr.begin() + mid);
-    vector<int> right(arr.begin() + mid, arr.end());
-    return merge(mergeSort(left), mergeSort(right));
-}
-```
+归并排序采用分治思想：先递归拆分数组，再把两个有序区间合并。
 
 ![Merge Sort](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/sorting/merge-sort.jpeg)
 
 ```c++
-#include "vector"
+vector<int> merge(const vector<int>& left, const vector<int>& right) {
+    vector<int> res;
+    int i = 0;
+    int j = 0;
 
-using namespace std;
-
-void print(vector<int> &nums) {
-    for (int i = 0; i < nums.size(); ++i) {
-        printf("%d ", nums[i]);
+    while (i < left.size() && j < right.size()) {
+        if (left[i] <= right[j]) {
+            res.push_back(left[i++]);
+        } else {
+            res.push_back(right[j++]);
+        }
     }
-    printf("\n");
+
+    res.insert(res.end(), left.begin() + i, left.end());
+    res.insert(res.end(), right.begin() + j, right.end());
+    return res;
 }
-int main() {
-    vector<int> num = {3, 1, 5, 8, 6, 2, 0, 9, 4, 7};
-    print(num);
-    //quicksort(num, 0, 9);
-    //selectsort(num);
-    //bubblesort(num);
-    //insertsort(num);
-    //heap_sort(num, 10);
-    vector<int> b = mergeSort(num);
-    print(b);
-    return 0;
+
+vector<int> mergeSort(vector<int>& nums) {
+    if (nums.size() < 2) {
+        return nums;
+    }
+
+    int mid = nums.size() / 2;
+    vector<int> left(nums.begin(), nums.begin() + mid);
+    vector<int> right(nums.begin() + mid, nums.end());
+
+    return merge(mergeSort(left), mergeSort(right));
 }
 ```
 
-**排序算法**
+## 复杂度对比
 
-**平均时间复杂度**
+| 排序算法 | 平均时间复杂度 | 最坏时间复杂度 | 最好时间复杂度 | 空间复杂度 | 稳定性 |
+| --- | --- | --- | --- | --- | --- |
+| 冒泡排序 | O(n²) | O(n²) | O(n) | O(1) | 稳定 |
+| 选择排序 | O(n²) | O(n²) | O(n²) | O(1) | 不稳定 |
+| 插入排序 | O(n²) | O(n²) | O(n) | O(1) | 稳定 |
+| 快速排序 | O(nlogn) | O(n²) | O(nlogn) | O(logn) | 不稳定 |
+| 堆排序 | O(nlogn) | O(nlogn) | O(nlogn) | O(1) | 不稳定 |
+| 希尔排序 | 取决于增量序列 | 取决于增量序列 | O(n) | O(1) | 不稳定 |
+| 归并排序 | O(nlogn) | O(nlogn) | O(nlogn) | O(n) | 稳定 |
+| 计数排序 | O(n+k) | O(n+k) | O(n+k) | O(n+k) | 稳定 |
+| 基数排序 | O(d(n+k)) | O(d(n+k)) | O(d(n+k)) | O(n+k) | 稳定 |
 
-**最坏时间复杂度**
-
-**最好时间复杂度**
-
-**空间复杂度**
-
-**稳定性**
-
-**冒泡排序**
-
-O(n²)
-
-O(n²)
-
-O(n)
-
-O(1)
-
-稳定
-
-**选择排序**
-
-O(n²)
-
-O(n²)
-
-O(n)
-
-O(1)
-
-不稳定
-
-**插入排序**
-
-O(n²)
-
-O(n²)
-
-O(n)
-
-O(1)
-
-稳定
-
-**快速排序**
-
-O(nlogn)
-
-O(n²)
-
-O(nlogn)
-
-O(nlogn)
-
-不稳定
-
-**堆排序**
-
-O(nlogn)
-
-O(nlogn)
-
-O(nlogn)
-
-O(1)
-
-不稳定
-
-**希尔排序**
-
-O(nlogn)
-
-O(ns)
-
-O(n)
-
-O(1)
-
-不稳定
-
-**归并排序**
-
-O(nlogn)
-
-O(nlogn)
-
-O(nlogn)
-
-O(n)
-
-稳定
-
-**计数排序**
-
-O(n+k)
-
-O(n+k)
-
-O(n+k)
-
-O(n+k)
-
-稳定
-
-**基数排序**
-
-O(N\*M)
-
-O(N\*M)
-
-O(N\*M)
-
-O(M)
-
-稳定
-
-一个算法所花费的时间与其中语句的执行次数成正比例，算法中的基本操作的执行次数，为算法的**时间复杂度**。
-
-**空间复杂度**是对一个算法在运行过程中临时占用存储空间大小的量度 。
-
-Copyright © YZJ 2022 all right reserved，powered by Gitbook更新时间： 2023-08-13 16:14:03
+时间复杂度描述的是算法运行时间随输入规模增长的变化趋势。空间复杂度描述的是算法运行过程中额外占用空间随输入规模增长的变化趋势。

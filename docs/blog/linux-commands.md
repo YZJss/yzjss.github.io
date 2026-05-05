@@ -1,451 +1,286 @@
-# linux常用命令
+# Linux 常用命令
 
-## 文件和目录常用命令
+## 文件和目录
 
-`pwd`查看当前所在目录
+### 目录切换
 
 ```bash
+pwd         # 查看当前所在目录
 cd ~        # 进入当前用户主目录
-cd ..        # 进入上级目录
+cd ..       # 进入上级目录
 cd /        # 进入系统根目录
 ```
 
-```bash
-ls -a        # 列出目录下所有文件和目录
-ls -l        # 等同于ll  将文件的名字、权限、所有者、文件大小等信息详细列出来
-```
-
-`touch` 新建文件命令
-
-`mkdir` 创建一个空目录
+### 查看目录
 
 ```bash
-rm -f                # 强制删除
-rm -r                # 删除目录和目录里所有文件
-rm -rf /*        # 删库跑路
+ls -a       # 列出目录下所有文件和目录，包括隐藏文件
+ls -l       # 以长格式显示文件权限、所有者、大小、修改时间等信息
+ll          # 很多系统中是 ls -l 的别名
 ```
+
+### 创建文件和目录
 
 ```bash
-mv a.txt b.txt        # 修改文件名
-mv b.txt ../            # 将文件移动到上级目录
+touch a.txt     # 创建空文件，或更新文件修改时间
+mkdir test      # 创建目录
+mkdir -p a/b/c  # 递归创建多级目录
 ```
+
+### 删除、移动、复制
 
 ```bash
-cp 源文件 目标文件（夹）              # 复制一个源文件到目标文件（夹）
-cp -r 源文件夹 目标文件夹             # 复制源文件夹到目标文件夹下
-cp -u 源文件 目标文件                    # 只有源文件较目标文件新时复制。
+rm -f a.txt         # 强制删除文件
+rm -r test          # 删除目录及目录下所有内容
+rm -rf test         # 强制递归删除目录
+
+mv a.txt b.txt      # 重命名文件
+mv b.txt ../        # 将文件移动到上级目录
+
+cp a.txt b.txt      # 复制文件
+cp -r dir1 dir2     # 复制目录
+cp -u a.txt b.txt   # 源文件较新时才复制
 ```
 
-## chmod 权限
+`rm -rf /` 这类命令会删除系统根目录下的内容，生产环境中绝对不要执行。
 
-Linux系统中一切都是文件。Linux使用不同的字符来区分不同的文件：
+## 权限 chmod
 
-普通文件
+Linux 中常见文件类型如下：
 
-目录文件
+| 标识 | 类型 |
+| --- | --- |
+| `-` | 普通文件 |
+| `d` | 目录 |
+| `l` | 符号链接 |
+| `b` | 块设备文件 |
+| `c` | 字符设备文件 |
+| `p` | 管道文件 |
 
-链接文件
-
-块设备文件
-
-字符设备文件
-
-管道文件
-
-\-
-
-d
-
-l
-
-b
-
-c
-
-p
-
-每一文件或目录的访问权限都有三组，每组用三位表示，分别为文件属主的读、写和执行权限；与属主同组的用户的读、写和执行权限；系统中其他用户的读、写和执行权限。当用ls -l命令显示文件或目录的详细信息时，最左边的一列为文件的访问权限。
+每个文件或目录的权限分为三组：文件所有者、所属组、其他用户。每组都包含读、写、执行三种权限。
 
 ![Chmod Permission](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/linux/chmod-permission.png)
 
-文件权限的数字表示法基于字符（rwx）的权限计算而来，其目的是简化权限的表示方式。例如，若某个文件的权限为7，则代表可读、可写、可执行（4+2+1）；若权限为6，则代表可读、可写（4+2）。
+### 权限含义
 
-```
-chmod who operator permission file` 如`chmod u+x rumenz.txt
-```
+| 权限 | 数字 | 含义 |
+| --- | --- | --- |
+| `r` | 4 | 可读 |
+| `w` | 2 | 可写 |
+| `x` | 1 | 可执行 |
 
-#### who(用户类型)
+例如 `7 = 4 + 2 + 1`，表示可读、可写、可执行；`6 = 4 + 2`，表示可读、可写。
 
-who
-
-用户类型
-
-说明
-
-u
-
-user
-
-文件所有者
-
-g
-
-group
-
-文件所有者所在组
-
-o
-
-others
-
-所有其他用户
-
-a
-
-all
-
-所用用户, 相当于 ugo
-
-#### operator(符号模式表)
-
-Operator
-
-说明
-
-+
-
-为指定的用户类型增加权限
-
-\-
-
-去除指定用户类型的权限
-
-\=
-
-设置指定用户权限的设置，即将用户类型的所有权限重新设置
-
-#### permission(权限)
-
-模式
-
-名字
-
-说明
-
-r
-
-读
-
-设置为可读权限
-
-w
-
-写
-
-设置为可写权限
-
-x
-
-执行权限
-
-设置为可执行权限
-
-#### 常见的数字权限
-
--   400 -r———— 拥有者能够读，其他任何人不能进行任何操作；
--   644 -rw-r—r— 拥有者都能够读，但只有拥有者可以编辑；
--   660 -rw-rw—— 拥有者和组用户都可读和写，其他人不能进行任何操作；
--   664 -rw-rw-r— 所有人都可读，但只有拥有者和组用户可编辑；
--   700 -rwx——— 拥有者能够读、写和执行，其他用户不能任何操作；
--   744 -rwxr—r— 所有人都能读，但只有拥有者才能编辑和执行；
--   755 -rwxr-xr-x 所有人都能读和执行，但只有拥有者才能编辑；
--   777 -rwxrwxrwx 所有人都能读、写和执行（该设置通常不是好想法）。
-
-对文件test赋权`chmod 777 test`或对一个目录赋权要加 -R，递归执行，如对yzj目录执行赋权，`chmod -R 777 yzj`
-
-## grep 搜索内容
-
-grep (global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来)是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。
-
-格式：**grep [选项] ”模式“ [文件]**
-
-内容和文件名均可写作正则表达式
+### 符号模式
 
 ```bash
--i：在搜索的时候忽略大小写
-
--n：显示结果所在行号
-
--c：统计匹配到的行数，注意，是匹配到的总行数，不是匹配到的次数
-
--o：只显示符合条件的字符串，但是不整行显示，每个符合条件的字符串单独显示一行
-
--v：输出不带关键字的行（反向查询，反向匹配）
-
--w：匹配整个单词，如果是字符串中包含这个单词，则不作匹配
--Ax：在输出的时候包含结果所在行之后的指定行数，这里指之后的x行，A：after
-
--Bx：在输出的时候包含结果所在行之前的指定行数，这里指之前的x行，B：before
-
--Cx：在输出的时候包含结果所在行之前和之后的指定行数，这里指之前和之后的x行，C：context
-
--e：实现多个选项的匹配，逻辑or关系
-
--P：表示使用兼容perl的正则引擎。
-
--E：使用扩展正则表达式，而不是基本正则表达式，在使用"-E"选项时，相当于使用egrep。
+chmod u+x run.sh     # 给文件所有者增加执行权限
+chmod g-w a.txt      # 去掉所属组写权限
+chmod a+r a.txt      # 所有人增加读权限
 ```
 
-## find 搜索文件
+| 标识 | 用户类型 |
+| --- | --- |
+| `u` | 文件所有者 |
+| `g` | 文件所属组 |
+| `o` | 其他用户 |
+| `a` | 所有用户，相当于 `ugo` |
 
-**find 搜索路径 [选项] 搜索内容**
+| 操作符 | 含义 |
+| --- | --- |
+| `+` | 增加权限 |
+| `-` | 去除权限 |
+| `=` | 重新设置权限 |
 
-\-name 通过文件名字来查找
+### 常见数字权限
+
+| 权限 | 含义 |
+| --- | --- |
+| `400` | 所有者可读，其他人无权限 |
+| `644` | 所有者可读写，组用户和其他用户可读 |
+| `660` | 所有者和组用户可读写，其他用户无权限 |
+| `700` | 所有者可读写执行，其他用户无权限 |
+| `755` | 所有者可读写执行，其他用户可读和执行 |
+| `777` | 所有人可读写执行，通常不建议使用 |
 
 ```bash
-find . -name a.cpp        # 从当前目录搜索
+chmod 755 run.sh
+chmod -R 755 project
 ```
 
-## cat、more、tail 显示文本文件内容
+## 文本搜索 grep
 
-`cat 文件名`：cat命令一次显示整个文件的内容
+`grep` 用于按模式搜索文本，并输出匹配的行。
 
-`more 文件名`：more命令分页显示文件的内容，按空格键显示下一页，按b键显上一页，按q键退出。
+```bash
+grep [选项] "模式" 文件
+```
 
-`tail -f 文件名`：tail -f用于显示文本文件的最后几行，如果文件的内容有增加，就**实时的刷新**。对程序员来说，tail -f极其重要，可以动态显示后台服务程序的日志，用于调试和跟踪程序的运行。
+常用选项：
+
+| 选项 | 含义 |
+| --- | --- |
+| `-i` | 忽略大小写 |
+| `-n` | 显示匹配行号 |
+| `-c` | 统计匹配行数 |
+| `-o` | 只输出匹配到的内容 |
+| `-v` | 反向匹配，输出不匹配的行 |
+| `-w` | 匹配完整单词 |
+| `-A n` | 输出匹配行之后 n 行 |
+| `-B n` | 输出匹配行之前 n 行 |
+| `-C n` | 输出匹配行前后各 n 行 |
+| `-E` | 使用扩展正则表达式 |
+| `-P` | 使用 Perl 兼容正则表达式 |
+
+```bash
+grep -n "error" app.log
+grep -R "TODO" .
+grep -E "error|warn" app.log
+```
+
+## 文件查找 find
+
+```bash
+find 搜索路径 [条件]
+```
+
+常用示例：
+
+```bash
+find . -name "a.cpp"             # 按文件名查找
+find . -type f -name "*.log"     # 查找 log 文件
+find . -type d -name "build"     # 查找目录
+find . -mtime -7                 # 查找 7 天内修改过的文件
+find . -size +100M               # 查找大于 100MB 的文件
+```
+
+## 查看文本内容
+
+```bash
+cat a.txt            # 一次显示整个文件
+more a.txt           # 分页显示文件内容
+less a.txt           # 分页查看，支持前后翻页和搜索
+head -n 20 a.txt     # 查看前 20 行
+tail -n 20 a.txt     # 查看后 20 行
+tail -f app.log      # 实时追踪日志
+```
 
 ## 进程管理
 
-常用命令
-
-作用
-
-ps -ef
-
-查看所有进程
-
-ps -ef \\
-
-grep expression
-
-用正则表达式过滤出所需要的进程
-
-kill -s name
-
-kill指定名称进程
-
-kill -s pid
-
-kill指定pid的进程
-
-top
-
-实时显示进程状态
-
-iostate
-
-查看io读写/cpu使用情况
-
-sar -u 1 10
-
-查询cpu使用情况（1秒1次，共10次）
-
-sar -d 1 10
-
-查询磁盘性能
+| 命令 | 作用 |
+| --- | --- |
+| `ps -ef` | 查看所有进程 |
+| `ps -ef | grep nginx` | 按关键字过滤进程 |
+| `kill PID` | 结束指定 PID 的进程 |
+| `kill -9 PID` | 强制结束进程 |
+| `top` | 实时查看进程和系统资源 |
+| `iostat` | 查看磁盘 I/O 和 CPU 使用情况 |
+| `sar -u 1 10` | 每 1 秒采样一次 CPU，共 10 次 |
+| `sar -d 1 10` | 每 1 秒采样一次磁盘，共 10 次 |
 
 ## 网络
 
-常用命令
+| 命令 | 作用 |
+| --- | --- |
+| `ifconfig` | 查看或配置网络接口，部分系统需要安装 `net-tools` |
+| `ip addr` | 查看 IP 地址 |
+| `ip link` | 查看网卡状态 |
+| `ping host` | 测试网络连通性 |
+| `netstat -lntp` | 查看监听中的 TCP 端口 |
+| `netstat -antp` | 查看 TCP 连接 |
+| `netstat -lutp` | 查看 TCP/UDP 监听和连接信息 |
+| `ss -lntp` | 新系统中常用来替代 `netstat` |
+| `route -n` | 查看路由表 |
+| `ip route` | 查看路由表 |
 
-作用
+配置 IP 示例：
 
-**ifconfig**
+```bash
+ifconfig eth0 192.168.1.10 netmask 255.255.255.0
+ip addr add 192.168.1.10/24 dev eth0
+```
 
-**查看网络接口属性**
+## 系统服务 systemctl
 
-ip addr
+| 命令 | 作用 |
+| --- | --- |
+| `systemctl status 服务名` | 查看服务状态 |
+| `systemctl start 服务名` | 启动服务 |
+| `systemctl stop 服务名` | 停止服务 |
+| `systemctl restart 服务名` | 重启服务 |
+| `systemctl enable 服务名` | 设置开机自启动 |
+| `systemctl disable 服务名` | 关闭开机自启动 |
 
-查看ip地址
+## 防火墙 firewall-cmd
 
-ipconfig eh0 192.168.1.1 netmask 255.255.255.255
+### 查看状态
 
-配置ip地址
+```bash
+firewall-cmd --version
+firewall-cmd --state
+systemctl status firewalld
+firewall-cmd --list-all
+firewall-cmd --list-ports
+firewall-cmd --list-services
+firewall-cmd --get-services
+systemctl is-enabled firewalld
+```
 
-**netstat**
+### 配置端口和服务
 
-**查看各种网络相关信息**
+```bash
+systemctl start firewalld
+systemctl restart firewalld
+systemctl stop firewalld
 
-netstat -lntp
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
 
-查看所有监听端口
+firewall-cmd --zone=public --add-port=5000-5500/tcp --permanent
+firewall-cmd --zone=public --remove-port=5000-5500/tcp --permanent
 
-netstat -antp
+firewall-cmd --zone=public --add-service=ftp --permanent
+firewall-cmd --zone=public --remove-service=ftp --permanent
 
-查看已经建立的TCP连接
+firewall-cmd --reload
+systemctl enable firewalld
+systemctl disable firewalld
+```
 
-netstat -lutp
+## 压缩和解压
 
-查看TCP/UDP的状态信息
+| 文件类型 | 解压命令 |
+| --- | --- |
+| `.tar` | `tar -xvf file.tar` |
+| `.gz` | `gzip -d file.gz` 或 `gunzip file.gz` |
+| `.tar.gz` / `.tgz` | `tar -xzf file.tar.gz` |
+| `.bz2` | `bzip2 -d file.bz2` 或 `bunzip2 file.bz2` |
+| `.tar.bz2` | `tar -xjf file.tar.bz2` |
+| `.Z` | `uncompress file.Z` |
+| `.tar.Z` | `tar -xZf file.tar.Z` |
+| `.rar` | `unrar e file.rar` |
+| `.zip` | `unzip file.zip` |
+| `.xz` | `xz -d file.xz` |
+| `.tar.xz` | `tar -xJf file.tar.xz` |
 
-route -n
+## Git 常用命令
 
-查看路由表
-
-## 系统服务
-
-常用命令
-
-作用
-
-systemctl status <服务名>
-
-查看某个服务
-
-systemctl start <服务名>
-
-启动某个服务
-
-systemctl stop <服务名>
-
-终止某个服务
-
-systemctl restart <服务名>
-
-重启某个服务
-
-systemctl enable <服务名>
-
-开启自启动
-
-systemctl disable <服务名>
-
-关闭自启动
-
-chkconfig --list
-
-列出系统服务
-
-使用systemctl命令 配置防火墙的过程如下
-
-**查看防火墙的命令：**
-
--   1）查看防火墙的版本。firewall-cmd --version
--   2）查看firewall的状态。firewall-cmd --state
--   3）查看firewall服务状态（普通用户可执行）。systemctl status firewalld
--   4）查看防火墙全部的信息。firewall-cmd --list-all
--   5）查看防火墙已开通的端口。firewall-cmd --list-port
--   6）查看防火墙已开通的服务。firewall-cmd --list-service
--   7）查看全部的服务列表（普通用户可执行）。firewall-cmd --get-services
--   8）查看防火墙服务是否开机启动。 systemctl is-enabled firewalld
-
-**配置防火墙的命令：**
-
--   1）启动、重启、关闭防火墙服务。
-    
-    -   systemctl start firewalld # 启动
-    -   systemctl restart firewalld # 重启
-    -   systemctl stop firewalld # 关闭
--   2）开放、移去某个端口。
-    
-    -   firewall-cmd --zone=public --add-port=80/tcp --permanent # 开放80端口
-    -   firewall-cmd --zone=public --remove-port=80/tcp --permanent # 移去80端口
--   3）开放、移去范围端口。
-    
-    -   firewall-cmd --zone=public --add-port=5000-5500/tcp --permanent # 开放5000-5500之间的端口
-    -   firewall-cmd --zone=public --remove-port=5000-5500/tcp --permanent # 移去5000-5500之间的端口
--   4）开放、移去服务。
-    
-    -   firewall-cmd --zone=public --add-service=ftp --permanent # 开放ftp服务
-    -   firewall-cmd --zone=public --remove-service=ftp --permanent # 移去http服务
--   5）重新加载防火墙配置（修改配置后要重新加载防火墙配置或重启防火墙服务）。
-    
-    -   firewall-cmd --reload
--   6）设置开机时启用、禁用防火墙服务。
-    
-    -   systemctl enable firewalld # 启用服务
-    -   systemctl disable firewalld # 禁用服务
-
-## 其他
-
-tar -xvf xxx.tar 解压tar包
-
-1.  \*.tar 用 tar –xvf 解压
-2.  \*.gz 用 gzip -d或者gunzip 解压
-3.  _.tar.gz和_.tgz 用 tar –xzf 解压
-4.  \*.bz2 用 bzip2 -d或者用bunzip2 解压
-5.  \*.tar.bz2用tar –xjf 解压
-6.  \*.Z 用 uncompress 解压
-7.  \*.tar.Z 用tar –xZf 解压
-8.  \*.rar 用 unrar e解压
-9.  \*.zip 用 unzip 解压
-10.  \*.xz 用 xz -d 解压
-11.  \*.tar.xz 用 tar -zJf 解压
-
-## 整理
-
--   首先是一些文件和目录操作的命令，比如：
-    -   cd 、pwd、 ls、
-    -   创建 touch 、mkdir，删除 rm、移动或重命名 rm，复制cp
-    -   cat、more、tail 查看文件内容
-    -   还有一些重要的命令，如chmod 权限管理、grep 搜索内容、find 搜索文件
--   还有一些和网络相关的命令
-    -   ipconfig 查看网络接口属性，配置ip地址
-    -   netstat 查看各种网络相关信息
-    -   route 查看路由
-    -   ping
--   进程管理的常用命令有：
-    -   ps -ef 查看所有进程信息
-    -   kill 杀死进程
--   系统方面常用的有：
-    -   top 可以动态显示cpu、内存、进程等情况
-    -   iostat 可以查看io读写/cpu使用情况
-    -   sar 查询cpu、磁盘使用情况
-    -   env 可以查看环境变量
-    -   date 显示日期
--   还有一些服务的常用命令
-    -   systemctl 管理服务
-    -   firewall-cmd 防火墙
-    -   vsftpd 文件传输
--   一些软件安装管理的
-    -   rpm、yum、dpkg、apt-get用于安装管理软件
-    -   解压缩有：
-        -   tar -xvf xxx.tar 解压tar包
-        -   zip、unzip
-        -   gzip与gunzip
-
-## git
-
-1、git init：初始化一个Git仓库；
-
-2、git clone：从远程仓库克隆代码到本地；
-
-3、git add：添加文件到暂存区；
-
-4、git commit：将暂存区的文件提交到本地仓库；
-
-5、git push：将本地仓库的代码推送到远程仓库；
-
-6、git pull：从远程仓库拉取最新代码；
-
-7、git branch：列出所有本地分支；
-
-8、git checkout：切换分支或恢复工作树文件；
-
-9、git merge：合并指定分支到当前分支；
-
-10、git status：显示工作树的状态；
-
-11、git log：显示提交日志；
-
-12、git diff：显示工作树与暂存区或本地仓库之间的差异；
-
-13、git stash：将当前工作区的变更储存到一个临时区域；
-
-14、git tag：添加、列出或删除标签；
-
-15、git remote：管理远程仓库；
-
-16、git fetch：从远程仓库拉取最新代码，但不自动合并到本地仓库；
-
-Copyright © YZJ 2022 all right reserved，powered by Gitbook更新时间： 2023-09-07 16:09:11
+| 命令 | 作用 |
+| --- | --- |
+| `git init` | 初始化 Git 仓库 |
+| `git clone URL` | 克隆远程仓库 |
+| `git add 文件` | 添加文件到暂存区 |
+| `git commit -m "message"` | 提交暂存区内容 |
+| `git push` | 推送到远程仓库 |
+| `git pull` | 拉取远程代码并合并 |
+| `git fetch` | 拉取远程代码但不自动合并 |
+| `git branch` | 查看本地分支 |
+| `git checkout 分支名` | 切换分支 |
+| `git switch 分支名` | 切换分支，新版本推荐 |
+| `git merge 分支名` | 合并分支 |
+| `git status` | 查看工作区状态 |
+| `git log` | 查看提交日志 |
+| `git diff` | 查看差异 |
+| `git stash` | 暂存当前工作区修改 |
+| `git tag` | 管理标签 |
+| `git remote -v` | 查看远程仓库 |

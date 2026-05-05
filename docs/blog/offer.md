@@ -1,9 +1,9 @@
-# 剑指offer
+# 剑指 Offer
 
 ## 链表
 
 ```c++
-//Definition for singly-linked list
+// Definition for singly-linked list
 struct ListNode{
     int val;
     ListNode *next;
@@ -15,7 +15,7 @@ struct ListNode{
 
 ### [06\. 从尾到头打印链表](https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/?favorite=xb9nqhhg)
 
-法一：用栈解决
+方法一：使用栈
 
 ```c++
 class Solution {
@@ -37,7 +37,7 @@ public:
 };
 ```
 
-法二：递归
+方法二：递归
 
 ```c++
 class Solution {
@@ -77,7 +77,7 @@ public:
 
 ### [22\. 链表中倒数第k个节点](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/?favorite=xb9nqhhg)
 
-法一：
+方法一：先统计链表长度
 
 ```c++
 class Solution {
@@ -98,7 +98,7 @@ public:
 };
 ```
 
-法二：快慢指针 p先走k步，然后p、q指针同时走，直到p走到尾后返回q。
+方法二：快慢指针。`p` 先走 `k` 步，然后 `p`、`q` 同时向后移动，直到 `p` 走到链表尾部，返回 `q`。
 
 ```c++
 class Solution {
@@ -120,7 +120,7 @@ public:
 
 ### [24\. 反转链表](https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/?favorite=xb9nqhhg)
 
-法一：双指针
+方法一：双指针
 
 ```c++
 class Solution {
@@ -139,7 +139,7 @@ public:
 };
 ```
 
-法二：递归
+方法二：递归
 
 ```c++
 class Solution {
@@ -190,7 +190,7 @@ public:
 
 ### [35\. 复杂链表的复制](https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/?favorite=xb9nqhhg)
 
-利用哈希表构建
+使用哈希表保存原节点到新节点的映射。
 
 ```c++
 class Solution {
@@ -218,7 +218,7 @@ public:
 
 ### [52\. 两个链表的第一个公共节点](https://leetcode.cn/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/?favorite=xb9nqhhg)
 
-利用set集合查询是否为同一个节点，是则返回。
+使用哈希集合记录链表 A 的所有节点，再遍历链表 B，遇到第一个已经出现过的节点时返回。
 
 ```c++
 class Solution {
@@ -237,7 +237,7 @@ public:
             }  
             q=q->next;
         }
-        return NULL;
+        return nullptr;
     }
 };
 ```
@@ -245,7 +245,7 @@ public:
 ## 二叉树
 
 ```c++
-//Definition for a binary tree node
+// Definition for a binary tree node
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -258,7 +258,7 @@ struct TreeNode {
 
 ### 二叉树的前中后序遍历
 
-题号：144、94、145
+对应题号：144、94、145。
 
 ```c++
 class Solution {
@@ -449,7 +449,7 @@ public:
 
 ### [33\. 二叉搜索树的后序遍历序列](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/?favorite=xb9nqhhg)
 
-找大于根节点的位置来划分左右子树递归判断
+后序遍历的最后一个元素是根节点。先找到第一个大于根节点的位置，用它划分左右子树，再递归判断左右子树是否都满足二叉搜索树性质。
 
 ```c++
 class Solution {
@@ -505,7 +505,7 @@ private:
 二叉搜索树的中序遍历为 **递增序列**
 
 ```c++
-//right 上一个 left 下一个
+// right 指向下一个节点，left 指向上一个节点
 class Solution {
 public:
     Node* treeToDoublyList(Node* root) {
@@ -534,7 +534,7 @@ private:
 
 ### [37\. 序列化二叉树](https://leetcode.cn/problems/xu-lie-hua-er-cha-shu-lcof/?favorite=xb9nqhhg)
 
-难 层次遍历
+思路：可以使用层序遍历，把空节点也用特殊标记保存下来；反序列化时再按顺序恢复左右孩子。
 
 ### [54\. 二叉搜索树的第k大节点](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/?favorite=xb9nqhhg)
 
@@ -589,7 +589,7 @@ public:
 ### [68 - I. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/?favorite=xb9nqhhg)
 
 ```c++
-//分三种情况 1.都是左节点后代 2.都是右节点后代 3.分别是左右节点后代
+// 分三种情况：都在左子树、都在右子树、分别位于左右子树
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
@@ -616,7 +616,7 @@ public:
         if(left == nullptr && right == nullptr) return nullptr; // 1.
         if(left == nullptr) return right; // 3.
         if(right == nullptr) return left; // 4.
-        return root; // 2. if(left != null and right != null)
+        return root; // left 和 right 都不为空，说明当前节点是最近公共祖先
     }
 };
 ```
@@ -710,7 +710,7 @@ public:
 
 ### [58 - I. 翻转单词顺序](https://leetcode.cn/problems/fan-zhuan-dan-ci-shun-xu-lcof/?favorite=xb9nqhhg)
 
-用栈麻烦，二次翻转或者getline
+可以使用字符串流按单词读取，再逆序拼接。
 
 ```c++
 class Solution {
@@ -736,7 +736,7 @@ public:
 
 ### [59 - I. 滑动窗口的最大值](https://leetcode.cn/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/?favorite=xb9nqhhg)
 
-难
+思路：维护一个单调递减队列，队首始终是当前窗口最大值。
 
 ### [59 - II. 队列的最大值](https://leetcode.cn/problems/dui-lie-de-zui-da-zhi-lcof/?favorite=xb9nqhhg)
 
@@ -805,13 +805,13 @@ public:
 
 ### [41\. 数据流中的中位数](https://leetcode.cn/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/?favorite=xb9nqhhg)
 
-难
+思路：维护两个堆，一个大根堆保存较小的一半，一个小根堆保存较大的一半。
 
 ## 字符串
 
 ### [19\. 正则表达式匹配](https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/?favorite=xb9nqhhg)
 
-难
+思路：动态规划。`*` 可以匹配零个或多个前面的字符，状态转移时需要分别讨论。
 
 ### [20\. 表示数值的字符串](https://leetcode.cn/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/?favorite=xb9nqhhg)
 
@@ -1083,7 +1083,7 @@ public:
 
 ### [12\. 矩阵中的路径](https://leetcode.cn/problems/ju-zhen-zhong-de-lu-jing-lcof/?favorite=xb9nqhhg)
 
-回溯+dfs
+回溯 + DFS。
 
 ```c++
 class Solution {
@@ -1188,7 +1188,7 @@ public:
 
 ### [14- II. 剪绳子 II](https://leetcode.cn/problems/jian-sheng-zi-ii-lcof/?favorite=xb9nqhhg)
 
-不值得用动态规划做，用数学方法。
+更适合使用数学方法处理。尽量把绳子拆成长度为 3 的段，乘积通常最大。
 
 ```c++
 // 循环取余
@@ -1216,7 +1216,7 @@ public:
 
 ### [39\. 数组中出现次数超过一半的数字](https://leetcode.cn/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/?favorite=xb9nqhhg)
 
-跟动态规划没关系
+这题常用哈希表计数或摩尔投票法，不属于典型动态规划问题。
 
 ```c++
 class Solution {
@@ -1479,7 +1479,7 @@ public:
 
 ### [48\. 最长不含重复字符的子字符串](https://leetcode.cn/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/?favorite=xb9nqhhg)
 
-hash+dp
+哈希表 + 动态规划
 
 ```c++
 class Solution {
@@ -1515,7 +1515,7 @@ public:
 };
 ```
 
-hash+ 双指针
+哈希表 + 双指针
 
 ### [57 - II. 和为s的连续正数序列](https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/?favorite=xb9nqhhg)
 
@@ -1575,7 +1575,7 @@ public:
 
 ### [43\. 1～n 整数中 1 出现的次数](https://leetcode.cn/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/?favorite=xb9nqhhg)
 
-难
+思路：按位数分段统计，先确定目标数字所在的位数区间，再定位具体数字和具体位。
 
 ### [44\. 数字序列中某一位的数字](https://leetcode.cn/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/?favorite=xb9nqhhg)
 
@@ -1819,5 +1819,3 @@ public:
     
     Java 中的 TreeMap，JDK 1.8 中的 HashMap、C++ STL 中的 map 均是基于红黑树结构实现。
     
-
-Copyright © YZJ 2022 all right reserved，powered by Gitbook更新时间： 2023-08-26 09:31:49

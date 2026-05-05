@@ -98,6 +98,7 @@ export default defineConfig({
       text: '最后更新'
     },
     outline: {
+      level: [2, 3],
       label: '本页目录'
     },
     docFooter: {
