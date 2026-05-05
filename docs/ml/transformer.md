@@ -1,321 +1,295 @@
-# 第 15 章 Transformer
+---
+title: 第 15 章 Transformer
+---
 
-Transformer 是一种用于序列建模的神经网络结构。它最早用于机器翻译，后来成为 BERT、GPT 等模型的基础。
+# 前言
 
-李沐讲 Transformer 时，重点不是把公式背下来，而是先看清楚它为什么替代 RNN：RNN 必须按时间一步一步算，长距离信息要传很多步；Transformer 用自注意力让序列中任意两个位置直接建立联系，因此更容易并行，也更容易建模长距离依赖。
+Transformer由论文《Attention is All You Need》提出，现在是谷歌云TPU推荐的参考模型。论文相关的Tensorflow的代码可以从GitHub获取，其作为Tensor2Tensor包的一部分。哈佛的NLP团队也实现了一个基于PyTorch的版本，并注释该论文。
 
-## 15.1 从 RNN 到自注意力
+在本文中，我们将试图把模型简化一点，并逐一介绍里面的核心概念，希望让普通读者也能轻易理解。
 
-RNN 处理序列时有一个明显限制：第 $t$ 个位置依赖第 $t-1$ 个位置，所以计算很难并行。
+Attention is All You Need：Attention Is All You Need
 
-如果一句话很长，开头的信息传到结尾需要经过很多步。路径越长，信息越容易衰减。
+## 1.Transformer 整体结构
 
-自注意力的想法是：序列中每个位置都可以直接看其他位置。
+首先介绍 Transformer 的整体结构，下图是 Transformer 用于中英文翻译的整体结构：
 
-例如句子：
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_01.png)
 
-```text
-The animal didn't cross the street because it was tired.
-```
+Transformer 的整体结构，左图Encoder和右图Decoder
 
-模型在理解 `it` 时，需要知道它指的是 `animal`，而不是 `street`。自注意力可以让 `it` 这个位置直接和前面的相关词建立联系。
+可以看到 Transformer 由 Encoder 和 Decoder 两个部分组成，Encoder 和 Decoder 都包含 6 个 block。Transformer 的工作流程大体如下：
 
-所以 Transformer 的核心变化是：
+第一步：获取输入句子的每一个单词的表示向量 X，X由单词的 Embedding（Embedding就是从原始数据提取出来的Feature） 和单词位置的 Embedding 相加得到。
 
-```text
-RNN：按顺序传递信息
-Transformer：任意位置之间直接计算关系
-```
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_02.png)
 
-## 15.2 注意力机制的直观理解
+Transformer 的输入表示
 
-注意力机制可以理解为加权平均。
+第二步：将得到的单词表示向量矩阵 (如上图所示，每一行是一个单词的表示 x) 传入 Encoder 中，经过 6 个 Encoder block 后可以得到句子所有单词的编码信息矩阵 C，如下图。单词向量矩阵用  表示， n 是句子中单词个数，d 是表示向量的维度 (论文中 d=512)。每一个 Encoder block 输出的矩阵维度与输入完全一致。
 
-给定一个查询，模型先判断应该关注哪些位置，然后把这些位置的信息按权重加起来。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_03.png)
 
-比如翻译一个词时，当前词可能更应该关注源句中的某几个词，而不是平均看所有词。
+Transformer Encoder 编码句子信息
 
-注意力机制做三件事：
+第三步：将 Encoder 输出的编码信息矩阵 C传递到 Decoder 中，Decoder 依次会根据当前翻译过的单词 1~ i 翻译下一个单词 i+1，如下图所示。在使用的过程中，翻译到单词 i+1 的时候需要通过 Mask (掩盖) 操作遮盖住 i+1 之后的单词。
 
-1. 计算当前位置和其他位置的相关程度。
-2. 把相关程度变成权重。
-3. 用权重对信息做加权求和。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_04.png)
 
-这就是注意力的基本思想。
+Transofrmer Decoder 预测
 
-## 15.3 Q、K、V
+上图 Decoder 接收了 Encoder 的编码矩阵 C，然后首先输入一个翻译开始符 `<Begin>`，预测第一个单词 "I"；然后输入翻译开始符 `<Begin>` 和单词 "I"，预测单词 "have"，以此类推。这是 Transformer 使用时候的大致流程，接下来是里面各个部分的细节。
 
-Transformer 里常用 Query、Key、Value 来描述注意力。
+## 2. Transformer 的输入
 
-| 向量 | 直观含义 |
-| --- | --- |
-| Query | 我现在想找什么 |
-| Key | 我能被怎样匹配 |
-| Value | 我真正提供的信息 |
+Transformer 中单词的输入表示 x由单词 Embedding 和位置 Embedding （Positional Encoding）相加得到。
 
-当前位置拿自己的 Query 去和其他位置的 Key 做匹配。匹配程度越高，对应位置的 Value 权重越大。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_05.png)
 
-缩放点积注意力写成：
+Transformer 的输入表示
 
-$$
-Attention(Q,K,V)
-=
-softmax\left(\frac{QK^T}{\sqrt{d}}\right)V
-$$
+### 2.1 单词 Embedding
 
-这里除以 $\sqrt{d}$ 是为了避免点积数值过大。如果数值太大，softmax 会变得过于极端，训练不稳定。
+单词的 Embedding 有很多种方式可以获取，例如可以采用 Word2Vec、Glove 等算法预训练得到，也可以在 Transformer 中训练得到。
 
-理解这个公式时，只要抓住一句话：
+### 2.2 位置 Embedding
 
-```text
-Q 和 K 决定看哪里，V 决定拿什么信息回来。
-```
+Transformer 中除了单词的 Embedding，还需要使用位置 Embedding 表示单词出现在句子中的位置。因为 Transformer 不采用 RNN 的结构，而是使用全局信息，不能利用单词的顺序信息，而这部分信息对于 NLP 来说非常重要。所以 Transformer 中使用位置 Embedding 保存单词在序列中的相对或绝对位置。
 
-## 15.4 自注意力
+位置 Embedding 用 PE表示，PE 的维度与单词 Embedding 是一样的。PE 可以通过训练得到，也可以使用某种公式计算得到。在 Transformer 中采用了后者，计算公式如下：
 
-自注意力指的是：Q、K、V 都来自同一个序列。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_06.png)
 
-假设输入是一句话中的所有词，每个词都会生成自己的 Q、K、V。然后每个词都可以和句子中的其他词计算关系。
+其中，pos 表示单词在句子中的位置，d 表示 PE的维度 (与词 Embedding 一样)，2i 表示偶数的维度，2i+1 表示奇数维度 (即 2i≤d, 2i+1≤d)。使用这种公式计算 PE 有以下的好处：
 
-自注意力的结果是：每个位置的新表示都融合了其他位置的信息。
+使 PE 能够适应比训练集里面所有句子更长的句子，假设训练集里面最长的句子是有 20 个单词，突然来了一个长度为 21 的句子，则使用公式计算的方法可以计算出第 21 位的 Embedding。
 
-它和传统注意力的区别在于：
+可以让模型容易地计算出相对位置，对于固定长度的间距 k，PE(pos+k) 可以用 PE(pos) 计算得到。因为 Sin(A+B) = Sin(A)Cos(B) + Cos(A)Sin(B), Cos(A+B) = Cos(A)Cos(B) - Sin(A)Sin(B)。
 
-| 机制 | Q、K、V 来源 |
-| --- | --- |
-| 普通注意力 | Q 来自一个序列，K 和 V 来自另一个序列 |
-| 自注意力 | Q、K、V 都来自同一个序列 |
+将单词的词 Embedding 和位置 Embedding 相加，就可以得到单词的表示向量 x，x 就是 Transformer 的输入。
 
-机器翻译中，编码器内部使用自注意力，让源句中每个词理解上下文。解码器内部也使用自注意力，让已经生成的目标词之间建立联系。
+## 3. Self-Attention（自注意力机制）
 
-## 15.5 多头注意力
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_07.png)
 
-多头注意力（Multi-Head Attention, MHA）把多个注意力头并行起来。单个注意力头只有一种匹配方式，表达能力有限。
+Transformer Encoder 和 Decoder
 
-多头注意力会把表示分成多个子空间，每个头分别做注意力，最后再把结果拼接起来。
+上图是论文中 Transformer 的内部结构图，左侧为 Encoder block，右侧为 Decoder block。红色圈中的部分为 Multi-Head Attention，是由多个 Self-Attention组成的，可以看到 Encoder block 包含一个 Multi-Head Attention，而 Decoder block 包含两个 Multi-Head Attention (其中有一个用到 Masked)。Multi-Head Attention 上方还包括一个 Add & Norm 层，Add 表示残差连接 (Residual Connection) 用于防止网络退化，Norm 表示 Layer Normalization，用于对每一层的激活值进行归一化。
 
-可以把多个头理解成多个观察角度：
+因为 Self-Attention是 Transformer 的重点，所以我们重点关注 Multi-Head Attention 以及 Self-Attention，首先详细了解一下 Self-Attention 的内部逻辑。
 
-- 有的头关注相邻词。
-- 有的头关注主谓关系。
-- 有的头关注指代关系。
-- 有的头关注长距离依赖。
+### 3.1 Self-Attention 结构
 
-多头注意力不是简单重复，而是让模型在不同表示空间里学习不同关系。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_08.png)
 
-整体流程是：
+Self-Attention 结构
 
-```text
-输入表示
--> 线性变换得到多组 Q、K、V
--> 每个头分别做注意力
--> 拼接多个头的结果
--> 再经过线性变换
-```
+上图是 Self-Attention 的结构，在计算的时候需要用到矩阵Q(查询),K(键值),V(值)。在实际中，Self-Attention 接收的是输入(单词的表示向量x组成的矩阵X) 或者上一个 Encoder block 的输出。而Q,K,V正是通过 Self-Attention 的输入进行线性变换得到的。
 
-## 15.6 位置编码
+### 3.2 Q, K, V 的计算
 
-自注意力本身不包含顺序信息。
+Self-Attention 的输入用矩阵X进行表示，则可以使用线性变阵矩阵WQ,WK,WV计算得到Q,K,V。计算如下图所示，注意 X, Q, K, V 的每一行都表示一个单词。
 
-如果只看自注意力，模型知道句子里有哪些词，但不知道哪个词在前、哪个词在后。因为注意力计算本身不依赖位置顺序。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_09.png)
 
-所以 Transformer 需要位置编码。
+Q, K, V 的计算
 
-位置编码会和词向量相加，让每个位置的输入表示带上位置信息：
+### 3.3 Self-Attention 的输出
 
-```text
-输入表示 = 词向量 + 位置编码
-```
+得到矩阵 Q, K, V之后就可以计算出 Self-Attention 的输出了，计算的公式如下：
 
-原始 Transformer 使用正弦和余弦函数构造位置编码。这样做的一个好处是：模型可以比较容易地学习相对位置信息。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_10.png)
 
-实际模型中也常见可学习位置编码。不同位置编码方式的目标一样：让模型知道顺序。
+Self-Attention 的输出
 
-## 15.7 Transformer 编码器
+公式中计算矩阵Q和K每一行向量的内积，为了防止内积过大，因此除以  的平方根。Q乘以K的转置后，得到的矩阵行列数都为 n，n 为句子单词数，这个矩阵可以表示单词之间的 attention 强度。下图为Q乘以  ，1234 表示的是句子中的单词。
 
-Transformer 编码器由多个相同的编码器块堆叠而成。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_11.png)
 
-一个编码器块包含两个主要部分：
+Q乘以K的转置的计算
 
-```text
-多头自注意力
-前馈神经网络
-```
+得到 之后，使用 Softmax 计算每一个单词对于其他单词的 attention 系数，公式中的 Softmax 是对矩阵的每一行进行 Softmax，即每一行的和都变为 1.
 
-每个部分外面都有残差连接和层归一化。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_12.png)
 
-可以写成：
+对矩阵的每一行进行 Softmax
 
-```text
-输入
--> 多头自注意力
--> 残差连接和 LayerNorm
--> 前馈网络
--> 残差连接和 LayerNorm
--> 输出
-```
+得到 Softmax 矩阵之后可以和V相乘，得到最终的输出Z。
 
-自注意力负责让不同位置交换信息。前馈网络负责对每个位置的表示做进一步加工。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_13.png)
 
-## 15.8 前馈网络
+Self-Attention 输出
 
-Transformer 中的前馈网络（Feed-Forward Network, FFN）不是在不同位置之间交换信息，而是对每个位置独立做变换。
+上图中 Softmax 矩阵的第 1 行表示单词 1 与其他所有单词的 attention 系数，最终单词 1 的输出  等于所有单词 i 的值  根据 attention 系数的比例加在一起得到，如下图所示：
 
-也就是说，第一个词有自己的表示，第二个词有自己的表示，前馈网络对每个位置使用同一套参数分别处理。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_14.png)
 
-它通常包含两层线性变换和一个非线性激活函数。
+Zi 的计算方法
 
-直观理解：
+### 3.4 Multi-Head Attention
 
-| 模块 | 作用 |
-| --- | --- |
-| 自注意力 | 决定每个位置应该看哪些其他位置 |
-| 前馈网络 | 对融合后的信息继续加工 |
+在上一步，我们已经知道怎么通过 Self-Attention 计算得到输出矩阵 Z，而 Multi-Head Attention 是由多个 Self-Attention 组合形成的，下图是论文中 Multi-Head Attention 的结构图。
 
-所以 Transformer 块不是只有注意力。注意力负责信息混合，前馈网络负责非线性变换。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_15.png)
 
-## 15.9 残差连接和层归一化
+Multi-Head Attention
 
-Transformer 堆得很深，如果没有稳定训练的结构，梯度传播会比较困难。
+从上图可以看到 Multi-Head Attention 包含多个 Self-Attention 层，首先将输入X分别传递到 h 个不同的 Self-Attention 中，计算得到 h 个输出矩阵Z。下图是 h=8 时候的情况，此时会得到 8 个输出矩阵Z。
 
-残差连接让输入可以直接加到输出上：
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_16.png)
 
-```text
-输出 = 输入 + 子层输出
-```
+多个 Self-Attention
 
-这样即使某个子层一开始学得不好，信息也能沿着残差路径传下去。
+得到 8 个输出矩阵  到  之后，Multi-Head Attention 将它们拼接在一起 (Concat)，然后传入一个Linear层，得到 Multi-Head Attention 最终的输出Z。
 
-层归一化（Layer Normalization, LayerNorm）用来稳定每一层的数值分布，减少训练震荡。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_17.png)
 
-李沐讲这一部分时强调：Transformer 的每个子层周围都有 Add & Norm，这不是装饰，而是深层模型能训练起来的重要原因。
+Multi-Head Attention 的输出
 
-## 15.10 Transformer 解码器
+可以看到 Multi-Head Attention 输出的矩阵Z与其输入的矩阵X的维度是一样的。
 
-解码器也由多个解码器块堆叠而成，但比编码器多一个注意力模块。
+## 4. Encoder 结构
 
-一个解码器块通常包含：
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_18.png)
 
-```text
-带掩码的自注意力
-编码器-解码器注意力
-前馈神经网络
-```
+Transformer Encoder block
 
-带掩码的自注意力用于看已经生成的目标序列。它不能看到未来位置，否则训练时就会作弊。
+上图红色部分是 Transformer 的 Encoder block 结构，可以看到是由 Multi-Head Attention, Add & Norm, Feed Forward, Add & Norm 组成的。刚刚已经了解了 Multi-Head Attention 的计算过程，现在了解一下 Add & Norm 和 Feed Forward 部分。
 
-编码器-解码器注意力用于读取源序列信息。例如机器翻译中，解码器生成英文词时，要从编码器输出的中文句子表示中取信息。
+### 4.1 Add & Norm
 
-## 15.11 掩码自注意力
+Add & Norm 层由 Add 和 Norm 两部分组成，其计算公式如下：
 
-生成任务必须从左到右生成。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_19.png)
 
-当模型预测第 3 个词时，只能看第 1、2 个词，不能看第 4、5 个词。
+Add &amp;amp;amp;amp;amp; Norm 公式
 
-掩码自注意力就是把未来位置遮住：
+其中 X表示 Multi-Head Attention 或者 Feed Forward 的输入，MultiHeadAttention(X) 和 FeedForward(X) 表示输出 (输出与输入 X 维度是一样的，所以可以相加)。
 
-```text
-第 1 个位置：只能看 1
-第 2 个位置：只能看 1, 2
-第 3 个位置：只能看 1, 2, 3
-```
+Add指 X+MultiHeadAttention(X)，是一种残差连接，通常用于解决多层网络训练的问题，可以让网络只关注当前差异的部分，在 ResNet 中经常用到：
 
-这样模型训练时和推理时的条件一致，都是根据已经看到的内容预测后面的内容。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_20.png)
 
-## 15.12 编码器-解码器注意力
+残差连接
 
-编码器-解码器注意力连接输入序列和输出序列。
+Norm指 Layer Normalization，通常用于 RNN 结构，Layer Normalization 会将每一层神经元的输入都转成均值方差都一样的，这样可以加快收敛。
 
-在机器翻译中：
+### 4.2 Feed Forward
 
-- 编码器读入源语言句子。
-- 解码器生成目标语言句子。
-- 解码器在每一步生成时，通过注意力去看编码器输出。
+Feed Forward 层比较简单，是一个两层的全连接层，第一层的激活函数为 Relu，第二层不使用激活函数，对应的公式如下。
 
-这里的 Q 来自解码器，K 和 V 来自编码器。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_21.png)
 
-直观地说：解码器拿当前生成状态去问编码器“我现在应该参考源句的哪些部分”。
+Feed Forward
 
-## 15.13 完整 Transformer 结构
+X是输入，Feed Forward 最终得到的输出矩阵的维度与X一致。
 
-原始 Transformer 是 Encoder-Decoder 结构。
+### 4.3 组成 Encoder
 
-整体流程：
+通过上面描述的 Multi-Head Attention, Feed Forward, Add & Norm 就可以构造出一个 Encoder block，Encoder block 接收输入矩阵  ，并输出一个矩阵  。通过多个 Encoder block 叠加就可以组成 Encoder。
 
-```text
-源序列
--> 词向量 + 位置编码
--> 多层编码器
--> 编码器输出
+第一个 Encoder block 的输入为句子单词的表示向量矩阵，后续 Encoder block 的输入是前一个 Encoder block 的输出，最后一个 Encoder block 输出的矩阵就是编码信息矩阵 C，这一矩阵后续会用到 Decoder 中。
 
-目标序列
--> 词向量 + 位置编码
--> 多层解码器
--> 输出概率
-```
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_03.png)
 
-编码器负责理解输入序列，解码器负责生成输出序列。
+Encoder 编码句子信息
 
-在机器翻译中，编码器读入原句，解码器一步步生成译文。
+## 5. Decoder 结构
 
-## 15.14 为什么 Transformer 更适合并行
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_22.png)
 
-RNN 必须先算前一个时间步，才能算下一个时间步。
+Transformer Decoder block
 
-Transformer 的自注意力可以一次性计算所有位置之间的关系，所以训练时更容易并行。
+上图红色部分为 Transformer 的 Decoder block 结构，与 Encoder block 相似，但是存在一些区别：
 
-三种结构可以这样比较：
+包含两个 Multi-Head Attention 层。
 
-| 模型 | 序列信息传递方式 | 并行能力 | 长距离依赖 |
-| --- | --- | --- | --- |
-| RNN | 一步一步传递隐藏状态 | 弱 | 较弱 |
-| CNN | 局部窗口逐层扩大感受野 | 强 | 需要堆很多层 |
-| Transformer | 任意位置直接注意力连接 | 强 | 较强 |
+第一个 Multi-Head Attention 层采用了 Masked 操作。
 
-这也是 Transformer 能在大规模数据和大模型训练中占优势的重要原因。
+第二个 Multi-Head Attention 层的K, V矩阵使用 Encoder 的编码信息矩阵C进行计算，而Q使用上一个 Decoder block 的输出计算。
 
-## 15.15 计算复杂度
+最后有一个 Softmax 层计算下一个翻译单词的概率。
 
-Transformer 的优势不是没有代价。
+### 5.1 第一个 Multi-Head Attention
 
-标准自注意力要计算序列中所有位置两两之间的关系。如果序列长度是 $n$，注意力矩阵大小大约是：
+Decoder block 的第一个 Multi-Head Attention 采用了 Masked 操作，因为在翻译的过程中是顺序翻译的，即翻译完第 i 个单词，才可以翻译第 i+1 个单词。通过 Masked 操作可以防止第 i 个单词知道 i+1 个单词之后的信息。下面以 "我有一只猫" 翻译成 "I have a cat" 为例，了解一下 Masked 操作。
 
-$$
-n \times n
-$$
+下面的描述中使用了类似 Teacher Forcing 的概念，不熟悉 Teacher Forcing 的童鞋可以参考以下上一篇文章Seq2Seq 模型详解。在 Decoder 的时候，是需要根据之前的翻译，求解当前最有可能的翻译，如下图所示。首先根据输入 `<Begin>` 预测出第一个单词为 "I"，然后根据输入 `<Begin> I` 预测下一个单词 "have"。
 
-所以序列变长时，计算和显存开销会增长很快。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_23.png)
 
-这就是长上下文模型要改进注意力机制的原因。常见方向包括局部注意力、稀疏注意力、滑动窗口注意力等。
+Decoder 预测
 
-## 15.16 BERT、GPT 和 Transformer
+Decoder 可以在训练的过程中使用 Teacher Forcing 并且并行化训练，即将正确的单词序列 (`<Begin> I have a cat`) 和对应输出 (`I have a cat <end>`) 传递到 Decoder。那么在预测第 i 个输出时，就要将第 i+1 之后的单词掩盖住，注意 Mask 操作是在 Self-Attention 的 Softmax 之前使用的，下面用 0 1 2 3 4 5 分别表示 `<Begin> I have a cat <end>`。
 
-Transformer 是基础结构，BERT 和 GPT 是不同使用方式。
+第一步：是 Decoder 的输入矩阵和 Mask 矩阵，输入矩阵包含 `<Begin> I have a cat` (0, 1, 2, 3, 4) 五个单词的表示向量，Mask 是一个 5×5 的矩阵。在 Mask 可以发现单词 0 只能使用单词 0 的信息，而单词 1 可以使用单词 0, 1 的信息，即只能使用之前的信息。
 
-| 模型 | 使用的结构 | 注意力方式 | 适合任务 |
-| --- | --- | --- | --- |
-| BERT | Encoder-only | 双向注意力 | 理解、分类、抽取 |
-| GPT | Decoder-only | 掩码自注意力 | 生成、对话 |
-| 原始 Transformer | Encoder-Decoder | 编码输入、解码输出 | 翻译、摘要 |
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_24.png)
 
-BERT 是 Bidirectional Encoder Representations from Transformers，能同时看左右上下文，所以适合理解任务。GPT 是 Generative Pre-trained Transformer，从左到右预测下一个 token，所以适合生成任务。
+输入矩阵与 Mask 矩阵
 
-## 15.17 本章小结
+第二步：接下来的操作和之前的 Self-Attention 一样，通过输入矩阵X计算得到Q,K,V矩阵。然后计算Q和  的乘积  。
 
-Transformer 的核心是自注意力。
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_25.png)
 
-自注意力让序列中任意两个位置可以直接建立关系，多头注意力让模型从多个角度看关系，位置编码补充顺序信息，前馈网络进一步加工每个位置的表示，残差连接和层归一化保证深层模型更容易训练。
+Q乘以K的转置
 
-学习 Transformer 时可以按这条线记：
+第三步：在得到  之后需要进行 Softmax，计算 attention score，我们在 Softmax 之前需要使用Mask矩阵遮挡住每一个单词之后的信息，遮挡操作如下：
 
-```text
-序列建模问题
--> 自注意力
--> 多头注意力
--> 位置编码
--> 编码器块
--> 解码器块
--> Encoder-only / Decoder-only / Encoder-Decoder
-```
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_26.png)
 
-这比单独背公式更重要。公式只是实现方式，结构思想才是 Transformer 的主线。
+Softmax 之前 Mask
+
+得到 Mask  之后在 Mask 上进行 Softmax，每一行的和都为 1。但是单词 0 在单词 1, 2, 3, 4 上的 attention score 都为 0。
+
+第四步：使用 Mask 与矩阵 V相乘，得到输出 Z，则单词 1 的输出向量  是只包含单词 1 信息的。
+
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_27.png)
+
+Mask 之后的输出
+
+第五步：通过上述步骤就可以得到一个 Mask Self-Attention 的输出矩阵  ，然后和 Encoder 类似，通过 Multi-Head Attention 拼接多个输出 然后计算得到第一个 Multi-Head Attention 的输出Z，Z与输入X维度一样。
+
+### 5.2 第二个 Multi-Head Attention
+
+Decoder block 第二个 Multi-Head Attention 变化不大， 主要的区别在于其中 Self-Attention 的 K, V矩阵不是使用 上一个 Decoder block 的输出计算的，而是使用 Encoder 的编码信息矩阵 C 计算的。
+
+根据 Encoder 的输出 C计算得到 K, V，根据上一个 Decoder block 的输出 Z 计算 Q (如果是第一个 Decoder block 则使用输入矩阵 X 进行计算)，后续的计算方法与之前描述的一致。
+
+这样做的好处是在 Decoder 的时候，每一位单词都可以利用到 Encoder 所有单词的信息 (这些信息无需 Mask)。
+
+### 5.3 Softmax 预测输出单词
+
+Decoder block 最后的部分是利用 Softmax 预测下一个单词，在之前的网络层我们可以得到一个最终的输出 Z，因为 Mask 的存在，使得单词 0 的输出 Z0 只包含单词 0 的信息，如下：
+
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_28.png)
+
+Decoder Softmax 之前的 Z
+
+Softmax 根据输出矩阵的每一行预测下一个单词：
+
+![图片](https://cdn.jsdelivr.net/gh/YZJss/tuchuang@main/images/ml/transformer/image_29.png)
+
+Decoder Softmax 预测
+
+这就是 Decoder block 的定义，与 Encoder 一样，Decoder 是由多个 Decoder block 组合而成。
+
+## 6. Transformer 总结
+
+Transformer 与 RNN 不同，可以比较好地并行训练。
+
+Transformer 本身是不能利用单词的顺序信息的，因此需要在输入中添加位置 Embedding，否则 Transformer 就是一个词袋模型了。
+
+Transformer 的重点是 Self-Attention 结构，其中用到的 Q, K, V矩阵通过输出进行线性变换得到。
+
+Transformer 中 Multi-Head Attention 中有多个 Self-Attention，可以捕获单词之间多种维度上的相关系数 attention score。
+
+\[1\]\[2\]
+
+参考
+
+^论文:Attention Is All You Need https://arxiv.org/abs/1706.03762
+
+^Transformer 模型详解 https://baijiahao.baidu.com/s?id=1651219987457222196&wfr=spider&for=pc
+
+

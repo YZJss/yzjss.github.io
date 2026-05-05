@@ -10,7 +10,7 @@
       <li><a href="/ml/">机器学习目录</a></li>
       <li><a href="/ml/linear-regression-one-variable">模型训练</a></li>
       <li><a href="/ml/cnn">卷积神经网络</a></li>
-      <li><a href="/ml/photo-ocr">Transformer</a></li>
+      <li><a href="/ml/transformer">Transformer</a></li>
     </ol>
   </section>
 
