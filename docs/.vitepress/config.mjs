@@ -44,7 +44,6 @@ export default defineConfig({
           items: [
             { text: '第 12 章 神经网络基础', link: '/ml/neural-networks-representation' },
             { text: '第 13 章 卷积神经网络', link: '/ml/cnn' },
-            { text: '附录：MNIST CNN 实操', link: '/ml/cnn-mnist' },
             { text: '第 14 章 序列模型', link: '/ml/rnn' },
             { text: '第 15 章 Transformer', link: '/ml/transformer' },
             { text: '第 16 章 图神经网络', link: '/ml/gnn' }

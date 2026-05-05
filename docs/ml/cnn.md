@@ -242,3 +242,65 @@ U-Net 的跳跃连接把浅层特征传到解码器，帮助恢复细节。
 
 这就是 U-Net 在医学图像分割中常见的原因：很多病灶区域边界细，需要同时保留空间细节和高级语义。
 
+## 13.16 MNIST CNN 实操
+
+下面是一份完整的 MNIST CNN 训练和测试代码：
+
+```python
+from torchvision import datasets, transforms  # 从 torchvision 导入数据集工具和图像预处理工具
+from torch.utils.data import DataLoader  # 导入 DataLoader，用来按 batch 加载数据
+import torch.nn as nn  # 导入神经网络模块，常用别名是 nn
+import torch  # 导入 PyTorch 主库
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")  # 有 CUDA 显卡就用 GPU，否则用 CPU
+transform = transforms.Compose([  # 把多个图像预处理步骤组合起来
+    transforms.ToTensor(),  # 把图片转成 Tensor，并把像素值从 0~255 缩放到 0~1
+    transforms.Normalize((0.1307,), (0.3081,)),  # 用 MNIST 的均值和标准差做归一化，让训练更稳定
+])  # 预处理组合结束
+model = nn.Sequential(  # 用 Sequential 按顺序搭建神经网络
+    nn.Conv2d(1, 32, 3),  # 第一层卷积：输入 1 个灰度通道，输出 32 个特征通道，卷积核大小 3x3
+    nn.BatchNorm2d(32),  # 对 32 个卷积输出通道做批归一化，让训练更稳定
+    nn.ReLU(),  # 激活函数，把负数变成 0，增加模型的非线性表达能力
+    nn.Conv2d(32, 64, 3),  # 第二层卷积：输入 32 个通道，输出 64 个通道，卷积核大小 3x3
+    nn.BatchNorm2d(64),  # 对 64 个卷积输出通道做批归一化
+    nn.ReLU(),  # 再次使用 ReLU 激活函数
+    nn.MaxPool2d(2),  # 最大池化，把特征图宽高缩小一半，减少计算量
+    nn.Flatten(),  # 把多维特征图展平成一维向量，方便接全连接层
+    nn.Dropout(0.3),  # 训练时随机丢弃 30% 的神经元输出，降低过拟合
+    nn.Linear(9216, 128),  # 全连接层：把 9216 个输入特征映射到 128 个特征
+    nn.ReLU(),  # 全连接层后继续加 ReLU 激活
+    nn.Dropout(0.3),  # 再做一次 Dropout，继续降低过拟合风险
+    nn.Linear(128, 10),  # 输出层：把 128 个特征映射到 10 类数字
+).to(device)  # 把模型参数移动到 CPU 或 GPU 上
+traindata = datasets.MNIST(root='./data', train=True, download=True, transform=transform)  # 下载/读取 MNIST 训练集
+traindataloader = DataLoader(traindata, batch_size=64, shuffle=True)  # 把训练集包装成 DataLoader，每批 64 张，训练时打乱顺序
+opt = torch.optim.Adam(model.parameters(), lr=0.001)  # 创建 Adam 优化器，用来更新模型参数
+criterion = nn.CrossEntropyLoss()  # 创建交叉熵损失函数，适合多分类任务
+for epoch in range(0, 10):  # 训练 10 轮，epoch 表示完整看一遍训练集
+    model.train()  # 切换到训练模式，启用 Dropout 和 BatchNorm 的训练行为
+    for x, y in traindataloader:  # 每次从训练集中取出一批图片 x 和标签 y
+        x = x.to(device)  # 把图片移动到当前设备
+        y = y.to(device)  # 把标签移动到当前设备
+        opt.zero_grad()  # 清空上一轮反向传播留下的梯度
+        output = model(x)  # 前向传播：把图片输入模型，得到 10 类分数
+        loss = criterion(output, y)  # 计算 loss，衡量预测结果和真实标签的差距
+        loss.backward()  # 反向传播，根据 loss 计算每个参数的梯度
+        opt.step()  # 优化器根据梯度更新模型参数
+    print(loss.item())  # 打印当前 epoch 最后一个 batch 的 loss
+torch.save(model.state_dict(), './model.pth')  # 保存模型参数到 model.pth
+
+valdata = datasets.MNIST(root='./data', train=False, download=True, transform=transform)  # 下载/读取 MNIST 测试集
+valdataloader = DataLoader(valdata, batch_size=1000, shuffle=False)  # 测试集 DataLoader，每批 1000 张，测试时不需要打乱
+model.eval()  # 切换到评估模式，关闭 Dropout，并让 BatchNorm 使用训练时累计的统计值
+correct = 0  # 记录预测正确的样本数量
+total = 0  # 记录测试过的样本总数量
+with torch.no_grad():  # 测试时不计算梯度，速度更快，也更省显存
+    for x, y in valdataloader:  # 每次从测试集中取出一批图片 x 和标签 y
+        x = x.to(device)  # 把测试图片移动到当前设备
+        y = y.to(device)  # 把测试标签移动到当前设备
+        pred = model(x).argmax(dim=1)  # 模型输出 10 类分数，取分数最大的类别作为预测结果
+        correct += (pred == y).sum().item()  # 统计这一批里预测正确的数量，并累加
+        total += y.size(0)  # 累加这一批的样本数量
+print(correct / total)  # 打印测试集准确率
+```
+
