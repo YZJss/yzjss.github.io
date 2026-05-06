@@ -35,7 +35,7 @@ $$
 h_\theta(x)=\frac{1}{1+e^{-\theta^T x}}
 $$
 
-$h_{\theta}(x)$ 可以理解为在给定 `x` 和参数 $\theta$ 时，`y = 1` 的概率。
+$h_{\theta}(x)$ 表示在给定 `x` 和参数 $\theta$ 时，`y = 1` 的概率。
 
 例如：
 
