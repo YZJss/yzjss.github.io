@@ -20,7 +20,6 @@
       <li><a href="/ml/random-forest">第 11 章 决策树</a></li>
       <li><a href="/ml/neural-networks-representation">第 12 章 神经网络基础</a></li>
       <li><a href="/ml/cnn">第 13 章 卷积神经网络</a></li>
-      <li><a href="/ml/cnn-mnist">附录：MNIST CNN 实操</a></li>
       <li><a href="/ml/rnn">第 14 章 序列模型</a></li>
       <li><a href="/ml/transformer">第 15 章 Transformer</a></li>
       <li><a href="/ml/gnn">第 16 章 图神经网络</a></li>
