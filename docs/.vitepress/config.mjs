@@ -6,6 +6,13 @@ export default defineConfig({
   description: 'YZJ 的学习笔记',
   cleanUrls: true,
   lastUpdated: true,
+  head: [
+    ['meta', { name: 'author', content: 'Yang Zejin' }],
+    ['meta', { property: 'og:site_name', content: 'YZJ 的学习笔记' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'YZJ 的学习笔记' }],
+    ['meta', { property: 'og:description', content: '机器学习和计算机面试笔记' }]
+  ],
   themeConfig: {
     logo: '/morty.ico',
     siteTitle: 'YZJ',
