@@ -27,7 +27,6 @@ export default defineConfig({
         {
           text: '基础概念',
           items: [
-            { text: '目录', link: '/ml/' },
             { text: '第 1 章 机器学习概述', link: '/ml/basics' },
             { text: '第 2 章 数学基础', link: '/ml/linear-algebra-review' },
             { text: '第 3 章 模型训练', link: '/ml/linear-regression-one-variable' },
